@@ -78,8 +78,6 @@ Reading research papers is a skill. Here's an approach that works well:
 ### Tools We'll Use
 - **PyTorch** — Primary deep learning framework
 - **Hugging Face** — Models, datasets, and training utilities
-- **DeepSpeed** — Microsoft's distributed training library
-- **FSDP** — PyTorch's Fully Sharded Data Parallel
 
 ## Paper Reading List by Topic
 
@@ -118,5 +116,5 @@ Reading research papers is a skill. Here's an approach that works well:
 ## Getting Help
 
 - **Ed Discussion**: Best for questions that might help others
-- **Office Hours**: Thursday 5-6 PM or by appointment
-- **Email**: For private matters only; use Ed for technical questions
+- **Office Hours**:  TBD
+- **Email**: Only for things not related to the course; use Ed for technical questions; do private posts on Ed for personal problems, grading issues, etc.
