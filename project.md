@@ -5,37 +5,31 @@ title: Final Project
 
 ## Overview
 
-The final project is an opportunity to explore a topic in deep learning at scale in depth. Projects can be:
+The final project is an opportunity to explore a topic in deep learning at scale in depth. 
 
-- **Research projects**: Investigate a novel research question
-- **Engineering projects**: Build or optimize a system
-- **Reproduction studies**: Reproduce and extend a published result
-- **Survey projects**: In-depth analysis of a research area (requires instructor approval)
-
-Projects can be done individually or in teams of 2-3 students.
+Projects will be teams of 3 students.
 
 ## Timeline
 
 | Date | Milestone | Deliverable |
 |------|-----------|-------------|
-| Week 4 | Team Formation | Submit team members and initial interests on Canvas |
-| Week 6 | Proposal | 2-page project proposal |
-| Week 9 | Midpoint Check-in | 5-minute progress presentation |
-| Week 12 | Draft Report | Optional: submit for early feedback |
-| Week 14-15 | Presentations | 15-minute presentation + Q&A |
-| Finals Week | Final Report | 8-page paper (NeurIPS format) |
+| Week 4 | Team Formation | Submit team members and initial interests |
+| Week 6 | Proposal | 1-page project proposal |
+| Week 9 | Midpoint Check-in | meet with TA and/or professor |
+| Week 12 | Draft Report |  |
+| Week 14-15 | Presentations | TBD |
+| Last day of class | Final Report | |
 
 ## Project Proposal (Week 6)
 
-Your 2-page proposal should include:
+Your proposal should include:
 
 1. **Problem Statement**: What question are you trying to answer?
 2. **Motivation**: Why is this important or interesting?
 3. **Related Work**: What prior work exists? How does your project differ?
 4. **Approach**: What methods will you use?
 5. **Evaluation**: How will you measure success?
-6. **Timeline**: What will you complete each week?
-7. **Resources**: What compute/data do you need?
+6. **Resources**: What compute/data do you need?
 
 ## Final Report
 
@@ -51,9 +45,7 @@ Your final report should follow the NeurIPS format (8 pages + unlimited referenc
 
 ## Presentation
 
-- 15 minutes presentation + 5 minutes Q&A
-- Cover motivation, approach, key results, and lessons learned
-- All team members should present
+- TBD
 
 ## Project Areas
 
@@ -115,25 +107,14 @@ Here are some suggested project directions. You're encouraged to propose your ow
 
 ## Compute Resources
 
-Students will have access to:
+We'll try to figure this out, but **everything** in deep learning is compute constrained. 
 
-- **Penn HPC Cluster**: Available to all students
-- **Cloud Credits**: Limited GCP/AWS credits available (request in proposal)
 - **Hugging Face**: Free tier access for model hosting
 
 For projects requiring significant compute, discuss with the instructor early.
 
 ## Evaluation Criteria
 
-Projects will be evaluated on:
-
-| Criterion | Weight | Description |
-|-----------|--------|-------------|
-| Technical Depth | 30% | Sophistication of methods and implementation |
-| Novelty | 20% | Originality of approach or findings |
-| Execution | 20% | Quality of experiments and analysis |
-| Presentation | 15% | Clarity of writing and presentation |
-| Relevtic Scope | 15% | Appropriate scope for team size and time |
 
 ## Past Project Examples
 
@@ -143,7 +124,7 @@ Strong projects typically:
 - Start with a clear, focused question
 - Build incrementally on existing work
 - Include thorough experiments with proper baselines
-- Discuss limitations honestly
+- Discuss limitations clearly
 - Provide reproducible code
 
 ## FAQ
@@ -157,5 +138,3 @@ Many interesting projects can be done at small to medium scale. Focus on careful
 **Can I work on a project related to my company/internship?**
 Yes, but ensure you have appropriate permissions and the project can be shared publicly.
 
-**When should I meet with the instructor?**
-Come to office hours to discuss project ideas anytime, but especially before the proposal deadline.
