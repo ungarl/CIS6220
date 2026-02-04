@@ -1,0 +1,32 @@
+title: "CIS6200: Deep Learning at Scale"
+description: "Graduate course on deep learning systems, optimization, and large-scale training"
+baseurl: ""
+url: ""
+
+# Theme
+theme: minima
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Navigation
+header_pages:
+  - index.md
+  - schedule.md
+  - resources.md
+  - project.md
+
+# Site settings
+author:
+  name: "Lyle Ungar"
+  email: "eric.ungar@pennmedicine.upenn.edu"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

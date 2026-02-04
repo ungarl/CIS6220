@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{{ '/schedule' | relative_url }}" {% if page.url == '/schedule.html' or page.url == '/schedule/' %}class="active"{% endif %}>Schedule</a>
+        <a href="{{ '/resources' | relative_url }}" {% if page.url == '/resources.html' or page.url == '/resources/' %}class="active"{% endif %}>Resources</a>
+        <a href="{{ '/project' | relative_url }}" {% if page.url == '/project.html' or page.url == '/project/' %}class="active"{% endif %}>Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      {% if page.title and page.url != '/' %}
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% endif %}
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ 'now' | date: "%Y" }} University of Pennsylvania | CIS6200: Deep Learning at Scale</p>
+      <p>Instructor: {{ site.author.name }} | <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+    </div>
+  </footer>
+</body>
+</html>
