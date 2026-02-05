@@ -1,6 +1,6 @@
 title: "CIS6200: Deep Learning at Scale"
-description: "Graduate course on deep learning systems, optimization, and large-scale training"
-baseurl: ""
+description: "Graduate course on core architectures and training methods in contemporary deep learning"
+baseurl: "/CIS6220"
 url: ""
 
 # Theme
@@ -22,7 +22,7 @@ header_pages:
 # Site settings
 author:
   name: "Lyle Ungar"
-  email: "eric.ungar@pennmedicine.upenn.edu"
+  email: "ungar@cis.upenn.edu"
 
 # Exclude from build
 exclude:

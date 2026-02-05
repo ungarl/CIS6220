@@ -7,20 +7,16 @@ title: Resources
 
 | Platform | Purpose | Link |
 |----------|---------|------|
-| Canvas | Grades, announcements, assignment submission | [Penn Canvas](https://canvas.upenn.edu) |
-| Google Drive | Lecture slides, shared materials | Link on Canvas |
-| Ed Discussion | Questions, discussions, announcements | Link on Canvas |
-| PollEverywhere | In-class participation | Link on Canvas |
+| Canvas | Links, grades | [Penn Canvas](https://canvas.upenn.edu) |
+| Google Drive | Homework, readings | Link on Canvas |
+| Ed Discussion | Q&A and discussions | Link on Canvas |
+| PollEverywhere | Class participation | Link on Canvas |
 
 ## Weekly Cadence
 
-Each week follows a consistent rhythm:
-
-- **Before Tuesday**: Complete required readings for the week
-- **Tuesday Class**: Lecture and discussion on first topic
-- **Before Thursday**: Prepare discussion questions, complete any additional readings
-- **Thursday Class**: Paper discussion led by student presenters
-- **Friday 11:59 PM**: Reading response due on Canvas
+- **Mondays:** Homework and post-quiz due at midnight
+- **Tuesdays:** Reading questions and pre-quiz due before class; lecture
+- **Thursdays:** Reading questions due before class; lecture; next week's readings released
 
 ## How to Read Papers
 
@@ -51,12 +47,12 @@ Reading research papers is a skill. Here's an approach that works well:
 **Goal**: Deep understanding, ability to extend or critique
 
 ### Questions to Consider
-- What problem are they solving? Why does it matter?
-- What is their key insight or contribution?
-- What are the limitations or assumptions?
-- How do their results compare to prior work?
-- What experiments would you run that they didn't?
-- How does this connect to other papers we've read?
+- What is the broader field?
+- What gap does the paper fill?
+- Why does it matter?
+- What is the novel method/approach?
+- What are the results?
+- What is the broader significance?
 
 ## Additional Resources
 
