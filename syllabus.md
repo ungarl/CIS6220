@@ -1,5 +1,5 @@
 
-# CIS6200: Deep Learning at Scale
+# CIS6220: Deep Learning at Scale
 
 
 **Instructor:** Professor Lyle Ungar
@@ -41,6 +41,13 @@ This course covers the core architectures and training methods used in contempor
 - **Interpretability and Steering**: Gradient methods, probes, steering
 
 Recurring questions will include: "Why this architecture and loss function?", "How was the training data collected, cleaned and augemented?", "What are the contributions of pretraining and fine tuning/post training?", "What is internal to the network; what external; why?", "How does this scale?"
+
+## Learning Goals
+
+- Understand the major concepts used in deep learning, including LLM, VLM, audo and video architectures, training, fine tuning, and reinforcement learning, and interpretability
+- Be able to select appropriate deep learning architecture, training data, and loss function for a given problem
+- Be able to critically read current deep learning papers
+- Formulate, conduct and write up a research contribution in deep learning
 
 
 ---

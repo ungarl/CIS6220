@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="course-header">
-  <h1>CIS6200: Deep Learning at Scale</h1>
+  <h1>CIS6220: Deep Learning at Scale</h1>
   <p class="subtitle">Spring 2026 | University of Pennsylvania</p>
   <p class="instructor">Instructor: Professor Lyle Ungar</p>
 </div>
