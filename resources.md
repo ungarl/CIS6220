@@ -28,7 +28,7 @@ All to linked from canvas.
 
 ## How to Read Papers
 
-Reading research papers is a skill. Here's an approach that works well:
+A structured approach to reading papers:
 
 ### First Pass (15-20 minutes)
 1. Read the title, abstract, and introduction
@@ -36,7 +36,7 @@ Reading research papers is a skill. Here's an approach that works well:
 3. Read the conclusion
 4. Skim section headings to understand structure
 
-**Goal**: Understand what problem they're solving and their main contribution
+**Goal**: Identify the problem and main contribution
 
 ### Second Pass (30 minutes)
 1. Read the paper more carefully, but skip any dense math
@@ -44,7 +44,7 @@ Reading research papers is a skill. Here's an approach that works well:
 3. Pay attention to experimental setup and results
 4. Look up 2-3 key references (if needed)
 
-**Goal**: Understand their approach and be able to summarize it
+**Goal**: Understand the approach well enough to summarize it
 
 ### Third Pass (optional, for deep understanding)
 1. Work through the math and proofs
@@ -52,7 +52,7 @@ Reading research papers is a skill. Here's an approach that works well:
 3. Consider what's missing or what you'd do differently
 4. Try to mentally "re-implement" their approach
 
-**Goal**: Deep understanding, ability to extend or critique
+**Goal**: Ability to extend or critique the work
 
 ### Questions to Consider
 - What is the broader field?
@@ -65,9 +65,9 @@ Reading research papers is a skill. Here's an approach that works well:
 ## Additional Resources
 
 ### Textbooks and Courses
-- [Dive into Deep Learning](https://d2l.ai/) — Interactive deep learning textbook
-- [CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2024/) — Stanford course on LLM training
-- [Full Stack Deep Learning](https://fullstackdeeplearning.com/) — Production ML course
+- [Dive into Deep Learning](https://d2l.ai/): interactive textbook
+- [CS336: Language Modeling from Scratch](https://stanford-cs336.github.io/spring2024/): Stanford, LLM training
+- [Full Stack Deep Learning](https://fullstackdeeplearning.com/): production ML
 
 ### Technical References
 - [PyTorch Distributed Documentation](https://pytorch.org/docs/stable/distributed.html)
@@ -75,13 +75,13 @@ Reading research papers is a skill. Here's an approach that works well:
 - [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
 
 ### Blogs and Articles
-- [Lilian Weng's Blog](https://lilianweng.github.io/) — Excellent ML research summaries
-- [The Gradient](https://thegradient.pub/) — ML research perspectives
-- [Chip Huyen's Blog](https://huyenchip.com/blog/) — ML systems and engineering
+- [Lilian Weng's Blog](https://lilianweng.github.io/): ML research summaries
+- [The Gradient](https://thegradient.pub/): ML research articles
+- [Chip Huyen's Blog](https://huyenchip.com/blog/): ML systems
 
 ### Tools We'll Use
-- **PyTorch** — Primary deep learning framework
-- **Hugging Face** — Models, datasets, and training utilities
+- **PyTorch**: primary framework
+- **Hugging Face**: models, datasets, training utilities
 
 ## Paper Reading List by Topic
 
