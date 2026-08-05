@@ -134,10 +134,16 @@ a {
 // Lists
 ul, ol {
   margin-bottom: 1rem;
-  padding-left: 2rem;
+  padding-left: 1.75rem;
 
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.4;
+  }
+
+  ul, ol {
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
   }
 }
 
