@@ -16,6 +16,7 @@ kramdown:
 header_pages:
   - index.md
   - schedule.md
+  - topics.md
   - resources.md
   - project.md
 

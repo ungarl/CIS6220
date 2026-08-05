@@ -14,7 +14,7 @@ Projects will be teams of 3 students.
 | Date | Milestone | Deliverable |
 |------|-----------|-------------|
 | Week 4 | Team Formation | Submit team members and initial interests |
-| Week 6 | Proposal | 1-page project proposal |
+| Week 7 (Oct 13) | Proposal | 1-page project proposal |
 | Week 9 | Midpoint Check-in | meet with TA and/or professor |
 | Week 12 | Draft Report |  |
 | Nov 24, Dec 1 & 3 | Presentations | TBD |
