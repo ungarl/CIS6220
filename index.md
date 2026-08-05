@@ -5,13 +5,20 @@ title: Home
 
 <div class="course-header">
   <h1>CIS6220: Deep Learning at Scale</h1>
-  <p class="subtitle"> Fall 2026? | University of Pennsylvania</p>
+  <p class="subtitle"> Fall 2026 | University of Pennsylvania</p>
   <p class="instructor">Instructor: Professor Lyle Ungar</p>
 </div>
 
 ## Course Overview
 
 This course covers the core architectures and training methods used in contemporary deep learning. Topics include transformers, vision, diffusion, multimodal models (VLM), deep reinforcement learning, mechanistic interpretability and cutting-edge research in areas such as speech and video generation, RAG, MCP and agents, and scientific paper writing. Students will read and critically discuss the seminal papers across deep learning and contribute to that literature.
+
+## Learning Goals
+
+- Understand the major concepts used in deep learning, including LLM, VLM, audio and video architectures, training, fine tuning, reinforcement learning, and interpretability
+- Be able to select appropriate deep learning architecture, training data, and loss function for a given problem
+- Be able to critically read current deep learning papers
+- Formulate, conduct and write up a research contribution in deep learning
 
 ## Course Structure
 
@@ -48,8 +55,8 @@ Recurring questions will include: "Why this architecture and loss function?", "H
 
 ## Course Logistics
 
-- **Time**: TBD
-- **Location**: TBD
+- **Time**: Tuesday/Thursday, 10:15–11:44 AM
+- **Location**: 3401 Walnut St, Room 401B
 - **Office Hours**: TBD
 
 See the [Schedule](schedule.html) for weekly topics and readings, and [Resources](resources.html) for course infrastructure and materials.

@@ -7,9 +7,12 @@ title: Schedule
 
 This schedule is tentative and may be adjusted based on class progress and interests. Readings should be completed before the listed class session.
 
+Class meets Tuesday/Thursday, 10:15–11:44 AM. Dates below reflect the Penn Fall 2026 academic
+calendar (classes Aug 25–Dec 7, Fall Term Break Oct 1–4, Thanksgiving Break Nov 26–29).
+
 ---
 
-### Week 0: Course Introduction & Deep Learning Review
+### Week 0: Course Introduction & Deep Learning Review (Aug 25 & 27)
 
 **Topics:**
 
@@ -33,7 +36,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 1: NLP and Attention Mechanisms
+### Week 1: NLP and Attention Mechanisms (Sep 1 & 3)
 
 **Tuesday: Transformers**
 
@@ -68,7 +71,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 2: Computer Vision and Segmentation
+### Week 2: Computer Vision and Segmentation (Sep 8 & 10)
 
 **Tuesday: Object Detection**
 
@@ -99,7 +102,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 3: VLMs, multimodal models, diffusion models
+### Week 3: VLMs, multimodal models, diffusion models (Sep 15 & 17)
 
 **Tuesday: Multimodal Architectures**
 
@@ -131,7 +134,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 4: Transfer Learning and Fine-Tuning
+### Week 4: Transfer Learning and Fine-Tuning (Sep 22 & 24)
 
 **Tuesday: Efficient Fine-Tuning**
 
@@ -162,7 +165,10 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 5: RAG, MCP, Skills, and Agentic AI
+### Week 5: RAG, MCP, Skills, and Agentic AI (Sep 29 & Oct 1)
+
+**Note:** Oct 1 falls during Fall Term Break (Oct 1–4) — no class that day. Thursday's content
+below needs to be relocated (e.g. folded into Tuesday, or moved to a later week).
 
 **Tuesday: RAG (Retrieval-Augmented Generation)**
 
@@ -171,7 +177,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 - Limitations and alternatives to RAG
 - Memory networks
 
-**Thursday: MCP, Tool Use and Agents**
+**Thursday (cancelled — Fall Term Break): MCP, Tool Use and Agents**
 
 - MCP learning to use APIs (Toolformer)
 - Self-supervised training for tool use
@@ -192,7 +198,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 6: Efficient Architectures
+### Week 6: Efficient Architectures (Oct 6 & 8)
 
 **Tuesday: Knowledge Distillation**
 
@@ -221,7 +227,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 7: In context learning; Mechanistic interpretability
+### Week 7: In context learning; Mechanistic interpretability (Oct 13 & 15)
 
 **Tuesday: In-Context Learning and Neural Tangent Kernels**
 
@@ -251,7 +257,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 8: Reinforcement Learning - Policy Optimization
+### Week 8: Reinforcement Learning - Policy Optimization (Oct 20 & 22)
 
 **Tuesday: RLHF and Policy Gradients**
 
@@ -285,7 +291,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 9: Reinforcement Learning - Deep Q-Networks and Games
+### Week 9: Reinforcement Learning - Deep Q-Networks and Games (Oct 27 & 29)
 
 **Tuesday: Q-learning; Decision Transformers**
 
@@ -316,7 +322,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 10: Speech and Audio Processing
+### Week 10: Speech and Audio Processing (Nov 3 & 5)
 
 **Tuesday: Speech Models**
 
@@ -340,7 +346,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 11: Video Understanding and Generation
+### Week 11: Video Understanding and Generation (Nov 10 & 12)
 
 **Tuesday: Video understanding**
 
@@ -375,7 +381,7 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Week 12: LLMs for Research; Course Wrap-up
+### Week 12: LLMs for Research; Course Wrap-up (Nov 17 & 19)
 
 **Tuesday: AI for Scientific Research**
 
@@ -391,7 +397,11 @@ This schedule is tentative and may be adjusted based on class progress and inter
 
 ---
 
-### Final Classes: Project Presentations
+### Final Classes: Project Presentations (Nov 24, Dec 1 & 3)
+
+**Note:** Nov 26 (Thanksgiving Break, Nov 26–29) is cancelled — presentations get 3 sessions
+instead of 4. Dec 7 is the last day of classes but falls on a Monday, so it adds no Tue/Thu
+session.
 
 ---
 

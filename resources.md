@@ -12,7 +12,7 @@ title: Resources
 | Ed Discussion | Q&A and discussions |
 | PollEverywhere | Class participation |
 
-All to linked from canvas.
+All linked from Canvas.
 
 ## Getting Help
 

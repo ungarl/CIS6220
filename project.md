@@ -17,7 +17,7 @@ Projects will be teams of 3 students.
 | Week 6 | Proposal | 1-page project proposal |
 | Week 9 | Midpoint Check-in | meet with TA and/or professor |
 | Week 12 | Draft Report |  |
-| Week 14-15 | Presentations | TBD |
+| Nov 24, Dec 1 & 3 | Presentations | TBD |
 | Last day of class | Final Report | |
 
 ## Project Proposal (Week 6)
@@ -45,7 +45,8 @@ Your final report should follow the NeurIPS format (8 pages + unlimited referenc
 
 ## Presentation
 
-- TBD
+- Three sessions: Tue Nov 24, Tue Dec 1, Thu Dec 3 (Nov 26 is cancelled for Thanksgiving Break).
+- Per-team time slot and format: TBD, depending on final team count.
 
 ## Project Areas
 
