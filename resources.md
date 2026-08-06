@@ -7,7 +7,7 @@ title: Resources
 
 | Platform | Purpose | 
 |----------|---------|
-| Canvas | Links, grades |
+| [Canvas](https://canvas.upenn.edu/courses/1946669) | Links, grades |
 | Google Drive | Homework, readings | 
 | Ed Discussion | Q&A and discussions |
 | PollEverywhere | Class participation |
@@ -94,6 +94,9 @@ A structured approach to reading papers:
 - Raffel et al., "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer" (T5, 2019)
 - He et al., "Deep Residual Learning for Image Recognition" (ResNet, 2016)
 - Hochreiter & Schmidhuber, "Long Short-Term Memory" (LSTM, 1997)
+- Beltagy et al., "Longformer: The Long-Document Transformer" (2020)
+- Liu et al., "Lost in the Middle: How Language Models Use Long Contexts" (2023)
+- "LongRoPE2: Near-Lossless LLM Context Window Scaling" (2025)
 
 ### Scaling Laws
 - Kaplan et al., "Scaling Laws for Neural Language Models" (2020)
@@ -106,6 +109,7 @@ A structured approach to reading papers:
 - Zhou et al., "UNet++: A Nested U-Net Architecture for Medical Image Segmentation" (2018)
 - Kirillov et al., "Segment Anything" (SAM, 2023)
 - Ravi et al., "SAM 2: Segment Anything in Images and Videos" (2024)
+- "SAM 3: Segment Anything with Concepts" (2025)
 - Dosovitskiy et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" (ViT, 2020)
 - He et al., "Masked Autoencoders Are Scalable Vision Learners" (MAE, 2022)
 
@@ -137,28 +141,32 @@ A structured approach to reading papers:
 - Van den Oord et al., "WaveNet: A Generative Model for Raw Audio" (2016)
 - Tang et al., "SALMONN: Towards Generic Hearing Abilities for Large Language Models" (2024)
 
-### Transfer Learning & Fine-tuning
-- Yosinski et al., "How Transferable Are Features in Deep Neural Networks?" (2014)
+### Fine-Tuning
 - Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021)
-- Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023)
-- Houlsby et al., "Parameter-Efficient Transfer Learning for NLP" (Adapters, 2019)
-- Li & Liang, "Prefix-Tuning: Optimizing Continuous Prompts for Generation" (2021)
 
 ### RAG, MCP & Agents
 - Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (RAG, 2020)
 - Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools" (2023)
+- Anthropic, "Model Context Protocol specification" (2024)
 - Graves et al., "Neural Turing Machines" (2014)
 - Weston et al., "Memory Networks" (2014)
+- "Multi-Agent Collaboration Mechanisms: A Survey of LLMs" (2025)
+- See also: Evaluation section below (GAIA, SWE-bench, τ-bench — agent-specific benchmarks)
 
-### Distillation & Mixture of Experts
+### Distillation, Mixture of Experts & Quantization
 - Hinton et al., "Distilling the Knowledge in a Neural Network" (2015)
 - Hsieh et al., "Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes" (2023)
 - Mukherjee et al., "Orca: Progressive Learning from Complex Explanation Traces of GPT-4" (2023)
+- DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025) — see also its distilled models (Section 2.3/4)
 - Shazeer et al., "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer" (2017)
 - Lepikhin et al., "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding" (2020)
 - Fedus et al., "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity" (2021)
 - Du et al., "GLaM: Efficient Scaling of Language Models with Mixture-of-Experts" (2021)
 - Jiang et al., "Mixtral of Experts" (Mixtral 8x7B, 2024)
+- DeepSeek-AI, "DeepSeek-V3 Technical Report" (2024)
+- Frantar et al., "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers" (2022/ICLR 2023)
+- Dettmers et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale" (2022)
+- Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023)
 
 ### Reinforcement Learning
 - Christiano et al., "Deep Reinforcement Learning from Human Preferences" (RLHF, 2017)
@@ -182,25 +190,37 @@ A structured approach to reading papers:
 - Haarnoja et al., "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning" (SAC, 2018)
 - Kumar et al., "Conservative Q-Learning for Offline Reinforcement Learning" (CQL, 2020)
 
-### In-Context Learning & Theory
-- Jacot et al., "Neural Tangent Kernel: Convergence and Generalization in Neural Networks" (NTK, 2018)
+### In-Context Learning
+- Dai et al., "Why Can GPT Learn In-Context?" (2023)
 - Garg et al., "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes" (2022)
 - Hegselmann et al., "TabLLM: Few-shot Classification of Tabular Data with Large Language Models" (2023)
 - Von Oswald et al., "Transformers Learn In-Context by Gradient Descent" (2023)
-- Choromanski et al., "Rethinking Attention with Performers" (2020)
 
 ### Large Language Models
 - Dubey et al., "The Llama 3 Herd of Models" (2024)
 - Groeneveld et al., "OLMo: Accelerating the Science of Language Models" (2024)
 - Jiang et al., "Mistral 7B" (2023)
 - DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025)
+- "A Survey of Test-Time Compute: From Intuitive Inference to Deliberate Reasoning" (2025)
+
+### Evaluation
+- Zheng et al., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena" (2023)
+- Chiang et al., "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference" (2024)
+- Mialon et al., "GAIA: a benchmark for General AI Assistants" (2023)
+- Jimenez et al., "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?" (2023/ICLR 2024)
+- Yao et al., "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains" (2024)
 
 ### Interpretability, Probing, and Steering
+- Alain & Bengio, "Understanding Intermediate Layers Using Linear Classifier Probes" (2016)
 - Tenney et al., "BERT Rediscovers the Classical NLP Pipeline" (2019)
 - Chen et al., "Probing BERT in Hyperbolic Spaces" (2020)
 - Kim et al., "Probing What Different NLP Tasks Teach Machines about Function Word Comprehension" (2018)
-- Turner et al., "Interpretable Steering of Large Language Models via Activation Engineering"
-- Yan Leng, "A Unified First-Order Framework for Activation" (2025)
+- Anthropic, "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning" (2023)
+- Anthropic, "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet" (2024)
+- Turner et al., "Activation Addition: Steering Language Models Without Optimization" (2023)
+- Anthropic, "A Mathematical Framework for Transformer Circuits" (2021)
+- "AxBench" (2025) — benchmark for comparing steering by prompting, fine-tuning, and activation adjustment
+- Supplemental: "Painless Activation Steering: An Automated, Lightweight Approach for Post-Training Large Language Models" (2025)
 
 ### Scientific Paper Writing
 - Lu et al., "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery" (2024)

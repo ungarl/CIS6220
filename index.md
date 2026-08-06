@@ -43,13 +43,13 @@ Two lectures per week (mandatory attendance), weekly homework (pytorch and paper
 - **Attention and Transformers**: The backbone of modern deep learning
 - **Vision and Segmentation**: YOLO, U-Net, SAM, diffusion models
 - **Multimodal Learning**: CLIP, ViLBERT, cross-modal representations
-- **Fine-tuning and Transfer**: LoRA, adapters, efficient adaptation
+- **Fine-Tuning**: LoRA, efficient adaptation
 - **RAG, MCP, and Agentic AI**: Tool use, external memory, Toolformer
 - **Reinforcement Learning**: Policy optimization (DPO, PPO), Q-learning
 - **Game-Playing AI**: AlphaGo/Zero, decision transformers
-- **MoE and Distillation**: Sparse models, knowledge transfer
+- **MoE, Distillation, and Quantization**: Sparse models, knowledge transfer, low-precision inference
 - **Audio/Video**: Conformers, Sora, speech models
-- **Interpretability and Steering**: Gradient methods, probes, steering
+- **Interpretability and Steering**: Probes, steering
 
 Recurring questions will include: "Why this architecture and loss function?", "How was the training data collected, cleaned and augmented?", "What are the contributions of pretraining and fine tuning/post training?", "What is internal to the network; what external; why?", "How does this scale?"
 

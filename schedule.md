@@ -1,4 +1,7 @@
-
+---
+layout: default
+title: Schedule
+---
 
 ## Course Schedule
 
@@ -20,7 +23,7 @@ For the final project deliverables in detail, see [Final Project](project.html).
 | 8 | Reinforcement Learning: Policy Optimization | Tue Oct 20, Thu Oct 22 | |
 | 9 | Reinforcement Learning: Deep Q-Networks and Games | Tue Oct 27, Thu Oct 29 | **Project: Midpoint check-in** |
 | 10 | Speech and Audio Processing | Tue Nov 3, Thu Nov 5 | |
-| 11 | Video Understanding and Generation | Tue Nov 10, Thu Nov 12 | |
+| 11 | Video (merged); Agentic AI — Orchestration & Evaluation | Tue Nov 10, Thu Nov 12 | Video compressed to one session (Tue); Thu is a new 3rd agentic AI session |
 | 12 | LLMs for Research; Course Wrap-up | Tue Nov 17, Thu Nov 19 | **Project: Draft Report due**; Thurs: **Midterm 2**  |
 | 13 | **Thanksgiving Break** | Tue Nov 24 , Thurs Nov 26| no class either day (optional meetings on Tuesday) |
 | 14 | Final Project Presentations | Tue Dec 1, Thu Dec 3 | |

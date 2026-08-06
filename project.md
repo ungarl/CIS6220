@@ -20,7 +20,7 @@ Projects will be teams of 3 students.
 | Nov 24, Dec 1 & 3 | Presentations | TBD |
 | Last day of class | Final Report | |
 
-## Project Proposal (Week 6)
+## Project Proposal (Week 7)
 
 Your proposal should include:
 
