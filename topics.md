@@ -11,9 +11,10 @@ calendar — dates, holidays, midterms, and project deadlines — see the [Sched
 This content is tentative and may be adjusted based on class progress and interests. Readings
 should be completed before the listed class session.
 
-Each reading is tagged **[F]oundational** (the seminal paper introducing the idea — read this
-one if you read nothing else), **[A]dvanced** (a deeper, more specialized, or more current
-extension), or **[S]upplemental** (optional — background, explainer, or further reading).
+The readings listed under each week are the assigned reading — read these before class.
+Deeper/more current/background material used in preparing each lecture lives separately in
+the instructor's own lecture notes, not here, so this list doesn't grow into more than
+students can reasonably read.
 
 ---
 
@@ -36,7 +37,7 @@ blocks of a neural network, and why do these particular choices (not others) ten
 
 **Readings:**
 
-- **[F]** [Role-Playing Paper-Reading Seminars](https://colinraffel.com/blog/role-playing-paper-reading-seminars.html)
+- [Role-Playing Paper-Reading Seminars](https://colinraffel.com/blog/role-playing-paper-reading-seminars.html)
 
 **Key Concepts:**
 
@@ -83,13 +84,9 @@ for agents in Week 11)
 
 **Readings:**
 
-- **[F]** Vaswani et al., "Attention Is All You Need" (2017)
-- **[A]** [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150) (Beltagy et al., 2020) — historical: the original long-context architecture fix
-- **[A]** [Lost in the Middle](https://arxiv.org/abs/2307.03172) (Liu et al., 2023)
-- **[A]** Yun et al., "Are Transformers Universal Approximators of Sequence-to-Sequence Functions?" (2020)
-- **[F]** Kaplan et al., "Scaling Laws for Neural Language Models" (2020)
-- **[F]** Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla, 2022)
-- **[A]** [LongRoPE2: Near-Lossless LLM Context Window Scaling](https://arxiv.org/abs/2502.20082) (2025) — current technique behind million-token context windows
+- Vaswani et al., "Attention Is All You Need" (2017)
+- Kaplan et al., "Scaling Laws for Neural Language Models" (2020)
+- Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla, 2022)
 
 **Key Concepts:**
 
@@ -128,10 +125,9 @@ editing, robotics perception, and medical-image annotation pipelines.
 
 **Readings:**
 
-- **[F]** Redmon et al., "You Only Look Once" (YOLO, 2015)
-- **[F]** Ronneberger et al., "U-Net: Convolutional Networks for Biomedical Image Segmentation" (2015)
-- **[F]** Kirillov et al., [Segment Anything](https://arxiv.org/abs/2304.02643) (SAM, 2023); Explained: [SAM - The Complete Guide](https://viso.ai/deep-learning/segment-anything-model-sam/)
-- **[A]** [SAM 3: Segment Anything with Concepts](https://arxiv.org/abs/2511.16719) (2025) — current successor, text-prompted concept segmentation
+- Redmon et al., "You Only Look Once" (YOLO, 2015)
+- Ronneberger et al., "U-Net: Convolutional Networks for Biomedical Image Segmentation" (2015)
+- Kirillov et al., [Segment Anything](https://arxiv.org/abs/2304.02643) (SAM, 2023); Explained: [SAM - The Complete Guide](https://viso.ai/deep-learning/segment-anything-model-sam/)
 
 **Key Concepts:**
 
@@ -170,8 +166,8 @@ since 2022 are mostly in fidelity and control, not a new paradigm.
 
 **Readings:**
 
-- **[F]** Radford et al., [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) (2021)
-- **[F]** Rombach et al., [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752) (Stable Diffusion, 2022); Explained: [The Illustrated Stable Diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
+- Radford et al., [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) (2021)
+- Rombach et al., [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752) (Stable Diffusion, 2022); Explained: [The Illustrated Stable Diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
 
 **Key Concepts:**
 
@@ -206,10 +202,11 @@ the model's weights vs. outside it in the surrounding system, and who controls t
 
 **Readings:**
 
-- **[F]** Schick et al., [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) (2023); Explained: [How does AI learn to use tools? - Toolformer explained](https://www.youtube.com/watch?v=hI2BY7yl_Ac)
-- **[F]** Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (RAG, 2020)
-- **[F]** Anthropic, [Model Context Protocol specification](https://modelcontextprotocol.io) (2024) — the actual MCP spec this topic is named for
-- **[S]** [LangChain Explained](https://www.ibm.com/topics/langchain)
+- Schick et al., [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) (2023); Explained: [How does AI learn to use tools? - Toolformer explained](https://www.youtube.com/watch?v=hI2BY7yl_Ac)
+- Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (RAG, 2020)
+- Anthropic, [Model Context Protocol specification](https://modelcontextprotocol.io) (2024) — the actual MCP spec this topic is named for
+- Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models" (ICLR 2023) — the origin of the reason+act loop every harness wraps around
+- Anthropic, ["Building Effective Agents"](https://www.anthropic.com/engineering/building-effective-agents) (Dec 2024) — the canonical workflows-vs-agents framework
 
 **Key Concepts:**
 
@@ -219,7 +216,50 @@ the model's weights vs. outside it in the surrounding system, and who controls t
 
 ---
 
-### Week 5: Mechanistic Interpretability and Steering
+### Week 5: Distillation; Training Efficiency at Scale
+
+Distillation asks: can a small model learn to imitate a big one's behavior, capturing most of
+its capability at a fraction of the cost? Cool current example: DeepSeek's R1-distilled
+models — small models trained purely by fine-tuning on reasoning *traces* generated by R1, with
+no RL of their own — beat other similarly-sized models on math benchmarks. It's a direct,
+current illustration of the distillation idea taught here, and a callback to Week 8's reasoning
+models.
+
+Distillation makes a big model tractable *after* training, for deployment. The other half of
+"making big models tractable" happens *before* training even starts: how do you train a model
+too large to fit on one device in the first place? Two complementary strategies: shard the
+model itself across devices (tensor/model parallelism), or shard the optimizer state/gradients
+instead of replicating them everywhere (ZeRO/FSDP-style memory sharding). This is the technical
+foundation behind several of the "Training Efficiency" and "Memory Optimization" final project
+ideas.
+
+**Tuesday: Knowledge Distillation; Training Efficiency at Scale**
+
+- Distillation: teacher-student models
+- Soft softmax with temperature
+- Distilling Step-by-Step
+- Reduced precision models (Deepseek example)
+- DeepSeek-R1-Distill: distilling reasoning traces (not just outputs) into small dense models
+- Training efficiency: tensor/model parallelism (Megatron-LM) vs. memory-efficient sharding of
+  optimizer state and gradients (ZeRO/FSDP) — training-time tractability, distillation's
+  deployment-time counterpart
+
+**Readings:**
+
+- Hinton et al., [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) (2015); Explained: [Distilling the Knowledge in a Neural Network](https://www.youtube.com/watch?v=EK61htlw8hY)
+- Shoeybi et al., [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](https://arxiv.org/abs/1909.08053) (2019)
+- Rajbhandari et al., [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](https://arxiv.org/abs/1910.02054) (2019)
+
+**Key Concepts:**
+
+- Distillation
+- Reduced precision models
+- Distilling reasoning traces vs. distilling outputs
+- Tensor/model parallelism; memory-efficient optimizer/gradient sharding (ZeRO/FSDP)
+
+---
+
+### Week 6: Mechanistic Interpretability and Steering
 
 Once a model can do something, how do you make it do a *specific* thing reliably — and how do
 you know what's happening inside when you try? Deeper question: how should AI be steered — by
@@ -244,15 +284,12 @@ directly editing its internal activations?
 
 **Readings:**
 
-- **[F]** Alain & Bengio, [Understanding Intermediate Layers Using Linear Classifier Probes](https://arxiv.org/abs/1610.01644) (2016) — the classic linear-probing paper
-- **[F]** Anthropic, ["A Mathematical Framework for Transformer Circuits"](https://transformer-circuits.pub/2021/framework/index.html) (2021) — the linear representation hypothesis; paired with [Neel Nanda's walkthrough video](https://www.youtube.com/watch?v=KV5gbOmHbjU)
-- **[F]** Anthropic, ["Towards Monosemanticity: Decomposing Language Models with Dictionary Learning"](https://transformer-circuits.pub/2023/monosemantic-features) (2023) — sparse autoencoders
-- **[A]** Anthropic, ["Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet"](https://transformer-circuits.pub/2024/scaling-monosemanticity/) (2024) — source of the famous "golden gate bridge" feature
-- **[F]** Dai et al., [Why Can GPT Learn In-Context?](https://arxiv.org/abs/2212.10559) (2023) — the in-context-learning method
-- **[F]** Turner et al., [Activation Addition: Steering Language Models Without Optimization](https://arxiv.org/abs/2308.10248) (2023) — the core activation-steering paper
-- **[F]** Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021) — the fine-tuning method
-- **[A]** [AxBench](https://arxiv.org/abs/2501.17148) (2025) — benchmark comparing all three
-- **[S]** "Painless Activation Steering: An Automated, Lightweight Approach for Post-Training Large Language Models" (arXiv:2509.22739, 2025)
+- Alain & Bengio, [Understanding Intermediate Layers Using Linear Classifier Probes](https://arxiv.org/abs/1610.01644) (2016) — the classic linear-probing paper
+- Anthropic, ["A Mathematical Framework for Transformer Circuits"](https://transformer-circuits.pub/2021/framework/index.html) (2021) — the linear representation hypothesis; paired with [Neel Nanda's walkthrough video](https://www.youtube.com/watch?v=KV5gbOmHbjU)
+- Anthropic, ["Towards Monosemanticity: Decomposing Language Models with Dictionary Learning"](https://transformer-circuits.pub/2023/monosemantic-features) (2023) — sparse autoencoders
+- Dai et al., [Why Can GPT Learn In-Context?](https://arxiv.org/abs/2212.10559) (2023) — the in-context-learning method
+- Turner et al., [Activation Addition: Steering Language Models Without Optimization](https://arxiv.org/abs/2308.10248) (2023) — the core activation-steering paper
+- Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021) — the fine-tuning method
 
 **Key Concepts:**
 
@@ -261,7 +298,7 @@ directly editing its internal activations?
 
 ---
 
-### Week 6: Efficient Architectures: MoE and Quantization
+### Week 7: Efficient Architectures: MoE and Quantization
 
 As models get too big to run cheaply, two questions emerge: how do you activate only *part* of
 a giant model per token instead of all of it (MoE), and how do you represent its weights with
@@ -286,50 +323,15 @@ compute of comparably capable dense models.
 
 **Readings:**
 
-- **[F]** Fedus et al., [A Review of Sparse Expert Models in Deep Learning](https://arxiv.org/pdf/2209.01667.pdf) (2022); Explained: [Sparse Expert Models (Switch Transformers, GLaM, and more)](https://www.youtube.com/watch?v=U5mhpKkOzKs)
-- **[A]** DeepSeek-AI, [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) (2024) — current flagship example of MoE at scale
-- **[F]** Frantar et al., [GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers](https://arxiv.org/abs/2210.17323) (2022/ICLR 2023)
-- **[F]** Dettmers et al., [LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale](https://arxiv.org/abs/2208.07339) (2022)
-- **[F]** Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023)
+- Fedus et al., [A Review of Sparse Expert Models in Deep Learning](https://arxiv.org/pdf/2209.01667.pdf) (2022); Explained: [Sparse Expert Models (Switch Transformers, GLaM, and more)](https://www.youtube.com/watch?v=U5mhpKkOzKs)
+- Frantar et al., [GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers](https://arxiv.org/abs/2210.17323) (2022/ICLR 2023)
+- Dettmers et al., [LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale](https://arxiv.org/abs/2208.07339) (2022)
+- Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023)
 
 **Key Concepts:**
 
 - Mixture of Experts (MoE)/Sparse models
 - Quantization: PTQ vs. QAT, bit-width tradeoffs
-
----
-
-### Week 7: Distillation; TBD
-
-Distillation asks: can a small model learn to imitate a big one's behavior, capturing most of
-its capability at a fraction of the cost? Cool current example: DeepSeek's R1-distilled
-models — small models trained purely by fine-tuning on reasoning *traces* generated by R1, with
-no RL of their own — beat other similarly-sized models on math benchmarks. It's a direct,
-current illustration of the distillation idea taught here, and a callback to Week 8's reasoning
-models.
-
-**Tuesday: Knowledge Distillation**
-
-- Distillation: teacher-student models
-- Soft softmax with temperature
-- Distilling Step-by-Step
-- Reduced precision models (Deepseek example)
-- DeepSeek-R1-Distill: distilling reasoning traces (not just outputs) into small dense models
-
-**Thursday: TBD** — open slot. Candidate: "Research Projects" (how to write a paper,
-Context-Content-Conclusion structure) — this is the same week the Project Proposal is due, so
-teaching paper-writing here would land right when it's useful. Not yet decided.
-
-**Readings:**
-
-- **[F]** Hinton et al., [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) (2015); Explained: [Distilling the Knowledge in a Neural Network](https://www.youtube.com/watch?v=EK61htlw8hY)
-- **[A]** DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025) — Section on distilled models (see also Week 8)
-
-**Key Concepts:**
-
-- Distillation
-- Reduced precision models
-- Distilling reasoning traces vs. distilling outputs
 
 ---
 
@@ -362,13 +364,10 @@ instead of human preferences, is what trains today's reasoning models.
 
 **Readings:**
 
-- **[S]** Review: [Introduction to RL](https://spinningup.openai.com/en/latest/spinningup/rl_intro.html)
-- **[F]** Schulman et al., [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347) (PPO, 2017) - Explained: [Preference Tuning LLMs with DPO](https://huggingface.co/blog/pref-tuning)
-- **[F]** Rafailov et al., [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (DPO, 2023)
-- **[F]** DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025)
-- **[A]** [A Survey of Test-Time Compute: From Intuitive Inference to Deliberate Reasoning](https://arxiv.org/abs/2501.02497) (2025)
-- **[F]** Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023)
-- **[A]** Chiang et al., [Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference](https://arxiv.org/abs/2403.04132) (2024)
+- Schulman et al., [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347) (PPO, 2017) - Explained: [Preference Tuning LLMs with DPO](https://huggingface.co/blog/pref-tuning)
+- Rafailov et al., [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (DPO, 2023)
+- DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025)
+- Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023)
 
 **Key Concepts:**
 
@@ -380,7 +379,7 @@ instead of human preferences, is what trains today's reasoning models.
 
 ---
 
-### Week 9: Reinforcement Learning - Deep Q-Networks and Games
+### Week 9: Reinforcement Learning - Deep Q-Networks
 
 Game-playing AI is a clean testbed for a bigger question: can an agent learn good strategy
 purely from trial-and-error and self-play, with no human demonstrations at all? Cicero pushed
@@ -404,10 +403,9 @@ to reach human-level play in a game that's fundamentally about talking, not just
 
 **Readings:**
 
-- **[F]** Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
-- **[F]** Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
-- **[S]** Supplemental: Silver et al., "Mastering the Game of Go" (AlphaGo, 2016)
-- **[F]** FAIR/Meta AI, ["Human-level play in the game of Diplomacy by combining language models with strategic reasoning"](https://www.science.org/doi/10.1126/science.ade9097) (Cicero, Science 2022)
+- Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
+- Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
+- FAIR/Meta AI, ["Human-level play in the game of Diplomacy by combining language models with strategic reasoning"](https://www.science.org/doi/10.1126/science.ade9097) (Cicero, Science 2022)
 
 **Key Concepts:**
 
@@ -438,8 +436,8 @@ the point, not who currently tops a leaderboard.
 
 **Readings:**
 
-- **[F]** Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper, 2022)
-- **[F]** Gulati et al., "Conformer: Convolution-augmented Transformer for Speech Recognition" (2020)
+- Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper, 2022)
+- Gulati et al., "Conformer: Convolution-augmented Transformer for Speech Recognition" (2020)
 
 **Key Concepts:**
 
@@ -447,30 +445,25 @@ the point, not who currently tops a leaderboard.
 
 ---
 
-### Week 11: Video (merged); Agentic AI — Orchestration & Evaluation
+### Week 11: LLMs for Research; Agentic AI — Orchestration & Evaluation
 
-Video generation is diffusion plus one more axis of complexity: time. Deeper question: how do
-you keep a scene physically and character-consistent across hundreds of frames when you're
-generating pixels, not simulating physics? Aside: Sora itself has already been superseded (Sora
-2, then deprecated in 2026); current leaders (Veo 3.1, Seedance 2.0) are judged as much on
-audio/dialogue sync as visual fidelity — the frontier has moved from "can it generate video" to
-"can it generate a consistent audiovisual scene."
+If an AI can read papers and write code, can it also do science — generate hypotheses, run
+experiments, and write them up? Deeper question: as AI-assisted (or AI-generated) papers flood
+the literature, how do we evaluate contributions when authorship and originality themselves
+become harder to pin down? This closes the loop on the course's evaluation theme (Weeks 1, 8)
+at the level of science itself.
 
 On the agentic side, the deeper question shifts once one agent can call tools: who decides what
 to delegate to which sub-agent, and how do you know the resulting swarm actually did the right
 thing?
 
-**Tuesday: Video Understanding and Generation** (merged into one session — the diffusion
-fundamentals were already covered in Week 3, so this is an application/extension, not a new
-foundation)
+**Tuesday: AI for Scientific Research**
 
-- Large Vision Models (LVM); video tokenization with VQGAN
-- Stable Video Diffusion; latent diffusion for video
-- Diffusion Transformers (DiT), spacetime patches (Sora); character consistency
-- Data curation for video (cuts, fades, optical flow); frame interpolation
+- AI for reviewing papers
+- AI-generated scientific papers
 
-**Thursday: Agentic AI — Orchestration, Harnesses, and Evaluation** (new session — a
-current-state-of-the-art follow-up to Week 4/5's RAG/MCP/agents material)
+**Thursday: Agentic AI — Orchestration, Harnesses, and Evaluation** (a current-state-of-the-art
+follow-up to Week 4's RAG/MCP/agents material)
 
 - Multi-agent orchestration: subagent/worker delegation and coordination, vs. single-agent
   ReAct-style loops
@@ -483,40 +476,51 @@ current-state-of-the-art follow-up to Week 4/5's RAG/MCP/agents material)
 
 **Readings:**
 
-- **[F]** Blattmann et al., "Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets" (2023)
-- **[F]** OpenAI, [Sora: Video Generation Models as World Simulators](https://openai.com/research/video-generation-models-as-world-simulators) (2024) — historical: still the clearest explanation of DiT/spacetime patches, even though the product has moved on
-- **[F]** Mialon et al., [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) (2023)
-- **[F]** Yao et al., [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) (2024)
-- **[F]** Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (2023/ICLR 2024)
-- **[S]** Supplemental survey: [Multi-Agent Collaboration Mechanisms: A Survey of LLMs](https://arxiv.org/abs/2501.06322) (2025)
+- Lu et al., "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery" (2024)
+- Kusumegi et al., "Scientific production in the era of large language models" (Science, 2025)
+- Mialon et al., [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) (2023)
+- Yao et al., [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) (2024)
+- Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (2023/ICLR 2024)
+- Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering" (NeurIPS 2024) — the interface/harness around an agent matters as much as the model itself, with real ablations proving it
+- Anthropic, ["Effective harnesses for long-running agents"](https://www.anthropic.com/engineering) (Nov 2025) — direct engineering follow-up on harness design (context management, sandboxing, assumptions going stale as models improve)
 
 **Key Concepts:**
 
-- Diffusion transformers for video; multi-stage training pipelines
 - Agent harnesses vs. models; multi-agent orchestration and delegation
 - Agent evaluation and benchmarking
 
 ---
 
-### Week 12: LLMs for Research; Course Wrap-up
+### Week 12: Video Understanding and Generation; Course Wrap-up
 
-If an AI can read papers and write code, can it also do science — generate hypotheses, run
-experiments, and write them up? Deeper question: as AI-assisted (or AI-generated) papers flood
-the literature, how do we evaluate contributions when authorship and originality themselves
-become harder to pin down? This closes the loop on the course's evaluation theme (Weeks 1, 8,
-11) at the level of science itself.
+Video generation is diffusion plus one more axis of complexity: time. Deeper question: how do
+you keep a scene physically and character-consistent across hundreds of frames when you're
+generating pixels, not simulating physics? Aside: Sora itself has already been superseded (Sora
+2, then deprecated in 2026); current leaders (Veo 3.1, Seedance 2.0) are judged as much on
+audio/dialogue sync as visual fidelity — the frontier has moved from "can it generate video" to
+"can it generate a consistent audiovisual scene." Closing the course here: this is the last new
+technical content before presentations, followed by a recap of the course's major themes.
 
-**Tuesday: AI for Scientific Research**
+**Tuesday: Video Understanding and Generation** (merged into one session — the diffusion
+fundamentals were already covered in Week 3, so this is an application/extension, not a new
+foundation)
 
-- AI for reviewing papers
-- AI-generated scientific papers
-- Course themes recap
+- Large Vision Models (LVM); video tokenization with VQGAN
+- Stable Video Diffusion; latent diffusion for video
+- Diffusion Transformers (DiT), spacetime patches (Sora); character consistency
+- Data curation for video (cuts, fades, optical flow); frame interpolation
+
+**Course Wrap-up**: recap of major course themes (architecture/data/loss choices, evaluation,
+scale) — see Key Takeaways below.
 
 **Readings:**
 
-- **[F]** Lu et al., "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery" (2024)
-- **[A]** Weng et al., "CycleResearcher: Improving Automated Research via Automated Review" (2024)
-- **[F]** Kusumegi et al., "Scientific production in the era of large language models" (Science, 2025)
+- Blattmann et al., "Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets" (2023)
+- OpenAI, [Sora: Video Generation Models as World Simulators](https://openai.com/research/video-generation-models-as-world-simulators) (2024) — historical: still the clearest explanation of DiT/spacetime patches, even though the product has moved on
+
+**Key Concepts:**
+
+- Diffusion transformers for video; multi-stage training pipelines
 
 ---
 

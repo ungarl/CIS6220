@@ -22,7 +22,7 @@ This course covers the core architectures and training methods used in contempor
 
 ## Course Structure
 
-Two lectures per week (mandatory attendance), weekly homework (pytorch and paper critiques), two midterms, and a group final project.
+Two lectures per week (mandatory attendance), weekly homework (vibe-coded pytorch and paper critiques), two midterms, and a group final project.
 
 ## Prerequisites
 
@@ -44,9 +44,8 @@ Two lectures per week (mandatory attendance), weekly homework (pytorch and paper
 - **Vision and Segmentation**: YOLO, U-Net, SAM, diffusion models
 - **Multimodal Learning**: CLIP, ViLBERT, cross-modal representations
 - **Fine-Tuning**: LoRA, efficient adaptation
-- **RAG, MCP, and Agentic AI**: Tool use, external memory, Toolformer
+- **Agentic AI and Harnesses**: Tool use, external memory, Toolformer
 - **Reinforcement Learning**: Policy optimization (DPO, PPO), Q-learning
-- **Game-Playing AI**: AlphaGo/Zero, decision transformers
 - **MoE, Distillation, and Quantization**: Sparse models, knowledge transfer, low-precision inference
 - **Audio/Video**: Conformers, Sora, speech models
 - **Interpretability and Steering**: Probes, steering

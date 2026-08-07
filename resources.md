@@ -101,12 +101,10 @@ A structured approach to reading papers:
 ### Scaling Laws
 - Kaplan et al., "Scaling Laws for Neural Language Models" (2020)
 - Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla, 2022)
-- Smith et al., "ConvNets Match Vision Transformers at Scale" (2023)
 
 ### Vision Models
 - Redmon et al., "You Only Look Once: Unified, Real-Time Object Detection" (YOLO, 2015)
 - Ronneberger et al., "U-Net: Convolutional Networks for Biomedical Image Segmentation" (2015)
-- Zhou et al., "UNet++: A Nested U-Net Architecture for Medical Image Segmentation" (2018)
 - Kirillov et al., "Segment Anything" (SAM, 2023)
 - Ravi et al., "SAM 2: Segment Anything in Images and Videos" (2024)
 - "SAM 3: Segment Anything with Concepts" (2025)
@@ -119,7 +117,6 @@ A structured approach to reading papers:
 - Li et al., "BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models" (2023)
 - Alayrac et al., "Flamingo: a Visual Language Model for Few-Shot Learning" (2022)
 - Yu et al., "CoCa: Contrastive Captioners are Image-Text Foundation Models" (2022)
-- Hessel et al., "Grounded Language Acquisition Through the Eyes and Ears of a Single Child" (2024)
 
 ### Generative Models
 - Kingma & Welling, "Auto-Encoding Variational Bayes" (VAE, 2013)
@@ -139,7 +136,6 @@ A structured approach to reading papers:
 - Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper, 2022)
 - Gulati et al., "Conformer: Convolution-augmented Transformer for Speech Recognition" (2020)
 - Van den Oord et al., "WaveNet: A Generative Model for Raw Audio" (2016)
-- Tang et al., "SALMONN: Towards Generic Hearing Abilities for Large Language Models" (2024)
 
 ### Fine-Tuning
 - Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021)
@@ -193,7 +189,6 @@ A structured approach to reading papers:
 ### In-Context Learning
 - Dai et al., "Why Can GPT Learn In-Context?" (2023)
 - Garg et al., "What Can Transformers Learn In-Context? A Case Study of Simple Function Classes" (2022)
-- Hegselmann et al., "TabLLM: Few-shot Classification of Tabular Data with Large Language Models" (2023)
 - Von Oswald et al., "Transformers Learn In-Context by Gradient Descent" (2023)
 
 ### Large Language Models
@@ -213,8 +208,6 @@ A structured approach to reading papers:
 ### Interpretability, Probing, and Steering
 - Alain & Bengio, "Understanding Intermediate Layers Using Linear Classifier Probes" (2016)
 - Tenney et al., "BERT Rediscovers the Classical NLP Pipeline" (2019)
-- Chen et al., "Probing BERT in Hyperbolic Spaces" (2020)
-- Kim et al., "Probing What Different NLP Tasks Teach Machines about Function Word Comprehension" (2018)
 - Anthropic, "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning" (2023)
 - Anthropic, "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet" (2024)
 - Turner et al., "Activation Addition: Steering Language Models Without Optimization" (2023)
