@@ -17,9 +17,9 @@ For the final project deliverables in detail, see [Final Project](project.html).
 | 2 | Computer Vision and Segmentation | Tue Sep 8, Thu Sep 10 | |
 | 3 | VLMs, Multimodal Models, Diffusion Models | Tue Sep 15, Thu Sep 17 | |
 | 4 | MCP, Harnesses; Agentic AI | Tue Sep 22, Thu Sep 24 | **Project: Team Formation due** |
-| 5 | Distillation | Tue Sep 29 | no class Thurs: Fall Break |
-| 6 | Mechanistic interpretability and Steering | Tue Oct 6, Thu Oct 8 | Thursday: **Midterm 1**  |
-| 7 | Efficient Architectures: MoE and quantization | Tue Oct 13, Thu Oct 15 | **Project: Proposal due** |
+| 5 | **Midterm 1** | Tue Sep 29 | no class Thurs: Fall Break |
+| 6 | Mechanistic interpretability and Steering | Tue Oct 6, Thu Oct 8 | |
+| 7 | Distillation; Efficient Architectures: MoE and Quantization | Tue Oct 13, Thu Oct 15 | **Project: Proposal due** |
 | 8 | Reinforcement Learning: Policy Optimization | Tue Oct 20, Thu Oct 22 | |
 | 9 | Reinforcement Learning: Deep Q-Networks | Tue Oct 27, Thu Oct 29 | **Project: Midpoint check-in** |
 | 10 | Speech and Audio Processing | Tue Nov 3, Thu Nov 5 | |
