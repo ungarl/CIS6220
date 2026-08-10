@@ -7,12 +7,13 @@ title: Resources
 
 | Platform | Purpose | 
 |----------|---------|
-| [Canvas](https://canvas.upenn.edu/courses/1946669) | Links, grades |
-| Google Drive | Homework, readings | 
+| [Canvas](https://canvas.upenn.edu/courses/1946669) | Assignment submission, grades, links |
+| Google Drive | Homework and reading materials (distributed here) | 
 | Ed Discussion | Q&A and discussions |
 | A+ | Attendance |
 
-All linked from Canvas.
+Homework and readings go out via Google Drive; assignments are handed in on Canvas. All linked
+from Canvas.
 
 ## Getting Help
 
@@ -25,6 +26,8 @@ All linked from Canvas.
 - **Mondays:** Homework and post-quiz due at midnight
 - **Tuesdays:** Reading questions and pre-quiz due before class; lecture
 - **Thursdays:** Reading questions due before class; lecture; next week's readings released
+
+See [Homework](homework.html) for homework guidelines and expectations.
 
 ## How to Read Papers
 

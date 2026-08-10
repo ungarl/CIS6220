@@ -64,5 +64,6 @@ Recurring questions will include: "Why this architecture and loss function?", "H
   instructor directly.
 
 See the [Schedule](schedule.html) for the calendar of dates, midterms, and project deadlines,
-[Topics & Readings](topics.html) for weekly content and readings, and
-[Resources](resources.html) for course infrastructure and materials.
+[Topics & Readings](topics.html) for weekly content and readings,
+[Resources](resources.html) for course infrastructure and materials, and
+[Homework](homework.html) for homework guidelines.
