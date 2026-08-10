@@ -11,16 +11,24 @@ Projects will be teams of 3 students.
 
 ## Timeline
 
-| Date | Milestone | Deliverable |
+| Week | Milestone | Deliverable |
 |------|-----------|-------------|
 | Week 4 | Team Formation | Submit team members and initial interests |
-| Week 7 (Oct 13) | Proposal | 1-page project proposal |
+| Week 7 | Proposal | 1-page project proposal |
 | Week 9 | Midpoint Check-in | meet with TA and/or professor |
 | Week 12 | Draft Report |  |
-| Nov 24, Dec 1 & 3 | Presentations | TBD |
-| Last day of class | Final Report | |
+| Week 14 | Presentations | TBD |
+| After Week 14 | Final Report | |
 
-## Project Proposal (Week 7)
+## Team Formation
+
+Submit:
+
+1. **Team name**
+2. **Team members**
+3. A paragraph or two on what you might do
+
+## Project Proposal
 
 Your proposal should include:
 
@@ -45,7 +53,7 @@ Your final report should follow the NeurIPS format (8 pages + unlimited referenc
 
 ## Presentation
 
-- Three sessions: Tue Nov 24, Tue Dec 1, Thu Dec 3 (Nov 26 is cancelled for Thanksgiving Break).
+- Two sessions, both in Week 14.
 - Per-team time slot and format: TBD, depending on final team count.
 
 ## Project Areas
