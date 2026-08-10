@@ -10,7 +10,7 @@ title: Resources
 | [Canvas](https://canvas.upenn.edu/courses/1946669) | Links, grades |
 | Google Drive | Homework, readings | 
 | Ed Discussion | Q&A and discussions |
-| PollEverywhere | Class participation |
+| A+ | Attendance |
 
 All linked from Canvas.
 

@@ -24,25 +24,49 @@ This week sets the shared vocabulary and mental models — architectures, losses
 regularization — that every later week assumes. Deeper question: what are the basic building
 blocks of a neural network, and why do these particular choices (not others) tend to work?
 
-**Topics:**
+**Tuesday: Course Overview; How to Read a Paper**
 
-- Course overview
-- How to read a paper
-- Deep learning review
-  - Model architectures, loss functions, optimization
-  - Core concepts: ReLU/SwigLU, CNN, RNN/LSTM, Transformers
-  - Regularization: L1/L2, dropout, early stopping
-  - Optimization: SGD, minibatch, Adam, Adagrad
-  - Learning paradigms: supervised, unsupervised, semi-supervised, reinforcement
+- Course overview: structure, infrastructure, grading
+- How to read a paper — taught via the same lens the course uses all semester: what problem is
+  being addressed, a concrete example of it, and how would you address it (before being shown
+  the answer). Worked live on "Attention Is All You Need" (Week 1's own paper): the problem
+  (RNN/LSTM sequence transduction is inherently sequential, can't parallelize, still struggles
+  with long-range dependencies), a concrete pre-2017 example (RNN/LSTM seq2seq with attention
+  bolted on), then — before revealing the answer — what would *you* try, knowing you want
+  parallelism and long-range modeling?
+
+**Thursday: Deep Learning Review**
+
+- Model architectures, loss functions, optimization — survey
+- Core concepts: ReLU/SwiGLU, CNN, RNN/LSTM, Transformers
+- Regularization: L1/L2, dropout, early stopping
+- Learning paradigms: supervised, unsupervised, semi-supervised, reinforcement
+- Three concepts get the same problem/example/solution treatment as Tuesday's paper-reading
+  demo, reframing review as active practice rather than a bullet-point recap:
+  - **Adagrad**: problem (SGD's one global learning rate doesn't fit all parameters,
+    especially with sparse features) → example (rare-word embeddings barely update under a
+    fixed LR while common-word embeddings update fine) → solution (adapt the learning rate
+    per-parameter from historical gradient magnitude)
+  - **Skip connections / ResNet**: problem (plain deep networks perform *worse* than shallower
+    ones — the degradation problem — despite being able to represent everything a shallow net
+    can) → example (an 18-layer plain CNN beating a 34-layer plain CNN on ImageNet) → solution
+    (residual connections: each block only learns a residual from the identity mapping)
+  - **BatchNorm**: problem (each layer's input distribution keeps shifting as earlier layers'
+    weights update, forcing tiny learning rates and careful initialization) → example (a
+    moderately large learning rate causing activations to blow up or vanish layer-by-layer as
+    training progresses) → solution (normalize each layer's activations per mini-batch, then
+    learn a scale/shift)
 
 **Readings:**
 
-- [Role-Playing Paper-Reading Seminars](https://colinraffel.com/blog/role-playing-paper-reading-seminars.html)
+- None assigned — Tuesday previews Week 1's "Attention Is All You Need" live rather than
+  assigning a separate reading
 
 **Key Concepts:**
 
 - Architecture, training data, and loss function choices, inductive bias, and costs
-- How to read a paper
+- How to read a paper: problem / concrete example / how would you solve it
+- Adagrad, skip connections/ResNet, BatchNorm as worked examples of that same lens
 
 ---
 

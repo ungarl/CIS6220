@@ -58,6 +58,11 @@ Recurring questions will include: "Why this architecture and loss function?", "H
 - **Location**: 3401 Walnut St, Room 401B
 - **Office Hours**: TBD
 
+## Course Policies
+
+- **Technology in class**: No laptops. Students who need an accommodation should contact the
+  instructor directly.
+
 See the [Schedule](schedule.html) for the calendar of dates, midterms, and project deadlines,
 [Topics & Readings](topics.html) for weekly content and readings, and
 [Resources](resources.html) for course infrastructure and materials.
