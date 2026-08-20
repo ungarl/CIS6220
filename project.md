@@ -114,6 +114,12 @@ Here are some suggested project directions. You're encouraged to propose your ow
 - Compare alignment techniques
 - Build evaluation frameworks for aligned models
 
+### Model Behavior and Blind Spots
+- Benchmark LLM/agent estimation of elapsed time and task duration, and test whether explicit timestamps or fine-tuning improve calibration
+- Study multi-party dialogue disentanglement: strip speaker tags from scripts/transcripts and measure how well a model reconstructs who said what
+- Audit what latent assumptions (e.g., speaker age, gender) a model makes from unlabeled text, and whether/how that biases its responses
+- Probe for spatial reasoning failures analogous to temporal ones, and compare text-only vs. vision-language models on the same tasks
+
 ## Compute Resources
 
 We'll try to figure this out, but **everything** in deep learning is compute constrained. 
@@ -127,7 +133,25 @@ For projects requiring significant compute, discuss with the instructor early.
 
 ## Past Project Examples
 
-*(This section will be updated with examples from previous offerings)*
+Projects from previous offerings of this course (as CIS 6200):
+
+| Team | Project |
+|---|---|
+| Automatic AGI | GRPO fine-tuning of DeepSeek-R1-Distilled-Qwen-7B for strategic decision-making |
+| GLY | Concept-bottleneck models for disease prediction / clinical trustworthiness |
+| (H&E)llo World | Pathology whole-slide image classification via self-distillation (DINOv2) and multi-instance learning (ABMIL), few-shot |
+| Multimodal Safety | RL-trained multimodal safety judge/detector |
+| Team Sigmoid | LLM political bias (liberal vs. conservative axis) |
+| The Adversaries | Adversarial robustness benchmarking (GCG attacks, CoT vs. no-CoT) |
+| SciVLMapper | Vision-language model decompiling scientific document images back to LaTeX |
+| Sparkling Fish | NuClass — pathology cell segmentation/classification via text-image embeddings |
+| STSG | LASER — neuro-symbolic spatio-temporal scene graph generation from video |
+| Style Transfer | Text style transfer / steering vectors (formal vs. informal) |
+| Audiojack | Audio/sound analysis with deep learning |
+| GPT is All You Need | Multi-agent RL (HAPPO-BNN) vs. GAT/RAG comparison |
+| Power Puff | Code-switching behavior in multilingual LLMs (Qwen), compared to human bilingual code-switching |
+| Team Shadowcase | Automated prompt engineering for image generation; latent-space direction analysis (time-of-day/season) |
+| Team Transformers | MoE routing — entropy-based adaptive gating vs. Top-p routing |
 
 Strong projects typically:
 - Start with a clear, focused question
