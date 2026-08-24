@@ -22,7 +22,7 @@ This course covers the core architectures and training methods used in contempor
 
 ## Course Structure
 
-Two lectures per week (mandatory attendance), weekly homework (vibe-coded pytorch and paper critiques), two midterms, and a group final project.
+Two lectures per week (mandatory attendance), weekly homework (vibe-coded pytorch) and paper critiques, two midterms, and a group final project.
 
 ## Prerequisites
 

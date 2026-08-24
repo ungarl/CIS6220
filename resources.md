@@ -25,7 +25,7 @@ from Canvas.
 
 - **Mondays:** Homework and post-quiz due at midnight
 - **Tuesdays:** Reading questions and pre-quiz due before class; lecture
-- **Thursdays:** Reading questions due before class; lecture; next week's readings released
+- **Thursdays:** Reading questions due before class; lecture; next week's homework, post-quiz, and readings released
 
 See [Homework](homework.html) for homework guidelines and expectations.
 
