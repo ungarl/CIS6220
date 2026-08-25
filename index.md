@@ -32,7 +32,8 @@ Two lectures per week (mandatory attendance), weekly homework (vibe-coded pytorc
 
 | Component | Weight |
 |-----------|--------|
-| Attendance | 10% |
+| Attendance | 8% |
+| Weekly Quizzes | 2% |
 | Homework | 20% |
 | Paper Critiques | 20% |
 | Final Project | 30% |
