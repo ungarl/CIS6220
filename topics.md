@@ -18,31 +18,28 @@ students can reasonably read.
 
 ---
 
-### Week 0: Course Introduction & Deep Learning Review
+### Week 0: Course Introduction, Deep Learning Review & Attention
 
 This week sets the shared vocabulary and mental models — architectures, losses, optimizers,
-regularization — that every later week assumes. Deeper question: what are the basic building
-blocks of a neural network, and why do these particular choices (not others) tend to work?
+regularization, and attention — that every later week assumes. Deeper question: what are the
+basic building blocks of a neural network, and why do these particular choices (not others)
+tend to work?
 
-**Tuesday: Course Overview; How to Read a Paper**
+**Tuesday: Course Overview; How to Read a Paper; Deep Learning Review**
 
-- Course overview: structure, infrastructure, grading
-- How to read a paper — taught via the same lens the course uses all semester: what problem is
-  being addressed, a concrete example of it, and how would you address it (before being shown
-  the answer). Worked live on "Attention Is All You Need" (Week 1's own paper): the problem
-  (RNN/LSTM sequence transduction is inherently sequential, can't parallelize, still struggles
-  with long-range dependencies), a concrete pre-2017 example (RNN/LSTM seq2seq with attention
-  bolted on), then — before revealing the answer — what would *you* try, knowing you want
-  parallelism and long-range modeling?
-
-**Thursday: Deep Learning Review**
-
-- Model architectures, loss functions, optimization — survey
-- Core concepts: ReLU/SwiGLU, CNN, RNN/LSTM, Transformers
-- Regularization: L1/L2, dropout, early stopping
-- Learning paradigms: supervised, unsupervised, semi-supervised, reinforcement
-- Three concepts get the same problem/example/solution treatment as Tuesday's paper-reading
-  demo, reframing review as active practice rather than a bullet-point recap:
+- Course overview and introductions: structure, infrastructure, grading
+- How to read a paper: the C-C-C framework (Context-Content-Conclusion), plus a working set of
+  questions for every paper this semester — what problem is being addressed, why it matters,
+  (optionally) how would *you* address it before seeing the paper's answer, what task they apply
+  it to, how they evaluate it, and the key concepts/terms
+- Deep learning review: learning paradigms (supervised, unsupervised/semi-supervised,
+  reinforcement), data modalities (tabular, language, vision, speech, video, multimodal), and
+  where retrieval/tool use fit in (RAG, MCP, harnesses)
+- Core concepts survey — model form (activations, CNN vs. RNN/LSTM vs. Transformer, architecture
+  depth), loss function and regularization (L1/L2, dropout, early stopping), and optimization
+  (SGD, minibatch size, gradient clipping, Adam = Adagrad + RMSProp)
+- Three concepts get a problem → example → solution treatment, the same lens used for reading
+  papers all semester:
   - **Adagrad**: problem (SGD's one global learning rate doesn't fit all parameters,
     especially with sparse features) → example (rare-word embeddings barely update under a
     fixed LR while common-word embeddings update fine) → solution (adapt the learning rate
@@ -56,17 +53,37 @@ blocks of a neural network, and why do these particular choices (not others) ten
     moderately large learning rate causing activations to blow up or vanish layer-by-layer as
     training progresses) → solution (normalize each layer's activations per mini-batch, then
     learn a scale/shift)
+- Minibatch size, revisited twice: first as a statistical tradeoff (larger batches → smoother
+  gradients and better GPU utilization but need learning-rate scaling and can generalize worse;
+  smaller batches → noise acts as a regularizer but hardware efficiency and wall-clock time
+  suffer), then as a hard memory constraint (worked example: an 8B-parameter model's
+  mixed-precision optimizer state alone is ~128GB before a single activation — more than a
+  single 80GB GPU holds — so minibatch size is often just whatever's left over after the model's
+  own bookkeeping)
+
+**Thursday: Attention**
+
+- Why RNN/LSTM sequence transduction is inherently sequential — can't parallelize across time
+  steps — and still struggles with long-range dependencies, motivating "Attention Is All You
+  Need"
+- Self-attention (Query, Key, Value); multi-head attention
+- Attention applications: machine translation, question answering, speech recognition
+- Positional encoding; masking
+- Transformer architecture overview — sets up Week 1's deeper treatment (tokenization, scaling
+  laws)
 
 **Readings:**
 
-- None assigned — Tuesday previews Week 1's "Attention Is All You Need" live rather than
+- None assigned — Thursday previews Week 1's "Attention Is All You Need" live rather than
   assigning a separate reading
 
 **Key Concepts:**
 
-- Architecture, training data, and loss function choices, inductive bias, and costs
-- How to read a paper: problem / concrete example / how would you solve it
-- Adagrad, skip connections/ResNet, BatchNorm as worked examples of that same lens
+- How to read a paper: Context-Content-Conclusion; problem/importance/approach/evaluation
+- Architecture, loss function, and optimization choices; inductive bias and cost tradeoffs
+- Adagrad, skip connections/ResNet, BatchNorm as worked problem/example/solution demonstrations
+- Minibatch size as both a statistical tradeoff and a memory-budget constraint
+- Self-attention, multi-head attention, positional encoding, masking — foundation for Week 1
 
 ---
 
