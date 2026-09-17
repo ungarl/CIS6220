@@ -74,8 +74,8 @@ tend to work?
 
 **Readings:**
 
-- None assigned — Thursday previews Week 1's "Attention Is All You Need" live rather than
-  assigning a separate reading
+- None assigned — Thursday works through Vaswani et al., "Attention Is All You Need" (2017)
+  live rather than assigning it as a separate reading
 
 **Key Concepts:**
 
@@ -89,53 +89,78 @@ tend to work?
 
 ### Week 1: NLP and Attention Mechanisms
 
-The transformer solved a concrete engineering problem — let every token attend to every other
-token, in parallel, without the sequential bottleneck of RNNs — and that one architectural
-choice now underlies almost everything else in this course. Deeper question: how much of what a
-model can do comes from architecture, vs. simply from how much data and compute you throw at it?
+Week 0 already covered how attention works — self-attention, multi-head attention, positional
+encoding, masking, the core "Attention Is All You Need" mechanics. This week goes deeper on what
+breaks when you actually try to run that mechanism at scale: how do you make attention cheaper
+over long documents, and does the resulting model actually *use* everything in a long context
+well? Deeper question: attention's basic mechanics don't change with scale — what does?
 
-**Tuesday: Transformers**
+**Tuesday: Long Context — Sparse Attention and Whether It's Used**
 
-- Tokenization: WordPiece, Byte Pair Encoding (BPE)
-- Encoder vs decoder architectures
-- Masking strategies
-- Positional encoding methods
-- **Scaling laws — two axes:**
-  - *Training-time*: model size, data size, and loss (Kaplan) — and compute-optimal allocation
-    between the two for a fixed training budget (Chinchilla)
-  - *Inference-time*: spending more compute per query at test time, rather than more compute at
-    training time — previewed here; covered in depth with reasoning models in Week 8
+- **HW0 recap**: what the minibatch-size experiment showed about compute time and test accuracy
+  as batch size varies, and whether AdamW is the same as plain Adam
+- Standard self-attention's quadratic cost in sequence length, and what that forces you to trade
+  off to handle long documents cheaply
+- Longformer: sliding-window (local) attention + global attention on a small set of task-chosen
+  tokens; dilated windows to grow the receptive field across layers without added compute;
+  separate Q/K/V projections for local vs. global attention
+- "Lost in the Middle": even when a model's context window comfortably covers the test sequence
+  length, performance is U-shaped — best near the start/end, worst in the middle — indicating a
+  learned/training-data effect, not a length limitation
+- Bridge to Thursday: between 2019-2021 the field chased new attention *patterns* (Longformer,
+  Performer, Reformer) to cut FLOPs; today most frontier models use standard full attention with
+  FlashAttention instead — why?
 
-**Thursday: Attention Mechanisms**
+**Thursday: FlashAttention — Making Exact Attention Fast**
 
-- Attention for machine translation, Q&A, speech recognition
-- Self-attention (Query, Key, Value)
-- Multi-head attention
-- How to handle long context windows? RoPE-scaling methods (YaRN, LongRoPE2) have pushed
-  production context windows past 1M tokens (Gemini, Llama 4 Scout) — but by 2026 the field is
-  shifting focus from "how long a window" to "how well the model uses what's in it" (recall
-  Thursday's "Lost in the Middle" reading) and toward inference-time compute instead
+- IO-awareness: the real bottleneck in attention isn't FLOPs, it's data movement between GPU HBM
+  (large, slow) and SRAM (small, fast) — standard attention materializes and repeatedly
+  reads/writes the full N×N score matrix
+- Tiling + online/streaming softmax: compute an exact softmax incrementally, block by block,
+  without ever materializing the full attention matrix in memory
+- Recomputing the attention matrix during the backward pass instead of storing it — more FLOPs,
+  but far less memory traffic, and still a net win
+- Why an exact, IO-aware method beats approximate/sparse methods (Tuesday's readings) on
+  wall-clock time despite doing "more" math
+- Bridge forward: FlashAttention fixes the *training*-time bottleneck; during generation the
+  analogous bottleneck becomes the KV cache
+- **KV-cache efficient attention**: MHA (baseline) → MQA (share K/V across all heads — large
+  memory win, quality cost) → GQA (grouped sharing — production standard: Llama 2/3, Mistral) →
+  MLA (DeepSeek-V2/V3: compress K/V into a shared low-rank latent — smaller cache than GQA,
+  near-MHA quality) → sparse indexers (shrink *how many* tokens are attended to, not what's
+  stored per token; composes with MLA)
 
 **Ongoing Theme: Evaluation** (introduced here; revisited for reasoning models in Week 8 and
 for agents in Week 11)
 
-- How do we know a model is actually good? Benchmarks and held-out test sets, perplexity vs.
-  downstream task performance
+- Does a longer context window actually get used well, or does it just exist? "Lost in the
+  Middle": models attend unevenly across long contexts even when the encoding/window supports
+  the length
+- How do we know a model is actually good more generally? Benchmarks and held-out test sets,
+  perplexity vs. downstream task performance
 - Why this matters more as models get harder to evaluate by inspection (scale, reasoning, agency)
 
 **Readings:**
 
-- Vaswani et al., "Attention Is All You Need" (2017)
-- Kaplan et al., "Scaling Laws for Neural Language Models" (2020)
-- Hoffmann et al., "Training Compute-Optimal Large Language Models" (Chinchilla, 2022)
+- Beltagy, Peters, Cohan, "Longformer: The Long-Document Transformer" (2020)
+- Liu et al., "Lost in the Middle: How Language Models Use Long Contexts" (2023)
+- Dao et al., "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness" (2022)
 
 **Key Concepts:**
 
-- Encoder-decoder architectures
-- Transformers, Self-attention, Multi-head attention
-- Context windows and embedding dimensions
-- Scaling laws: training-time (data/model size) vs. inference-time (compute per query)
-- Evaluation as a recurring theme
+- Quadratic attention cost; sparse/local attention (sliding window, dilation, global attention)
+  as one architectural route to cheaper long context
+- Evaluation as a recurring theme; "Lost in the Middle" as a concrete test of whether long
+  context is actually used well, independent of window size
+- IO-awareness, tiling, online softmax; why exact + hardware-aware can beat approximate
+- FLOPs vs. wall-clock time; why the field converged on FlashAttention over custom sparse
+  attention patterns
+
+**Not covered this week** (moved out of the old plan — see `lecture_notes/supplemental_papers.md`
+for where this content is parked, pending a decision on which week it belongs to): RoPE/YaRN
+positional-encoding extrapolation, Kaplan/Chinchilla scaling laws, and the MHA→MQA→GQA→MLA
+KV-cache-compression lineage. **Flagged for Lyle** — these were the prior plan's Week 1 content
+but don't match what's actually been assigned to students; they need a new home in the schedule.
 
 ---
 
@@ -184,9 +209,12 @@ How do you get a single model to connect a caption to a picture? CLIP's contrast
 pull matching image/text pairs together in a shared embedding space, push mismatched pairs apart
 — became the substrate for nearly every text-to-image system since. Deeper question: how do you
 use language to control image generation, and where does "meaning" actually live in that shared
-embedding space? Aside: the current image-generation frontier (FLUX.2, Stable Diffusion 3.5) is
-still built on the same latent-diffusion + text-conditioning recipe taught here — the advances
-since 2022 are mostly in fidelity and control, not a new paradigm.
+embedding space? Aside: most of the current image-generation frontier (FLUX.2, Stable Diffusion
+3.5) is still built on the same latent-diffusion + text-conditioning recipe taught here — the
+advances since 2022 are mostly in fidelity and control, not a new paradigm. Complication: Google's
+"Nano Banana" line briefly tested the alternative — the original Nano Banana (Gemini 2.5 Flash
+Image, Aug 2025) generated images autoregressively, as LLM-style tokens, before Nano Banana 2
+reverted to a diffusion decoder — a real, if short-lived, run at a genuinely different paradigm.
 
 **Tuesday: Multimodal Architectures**
 
@@ -207,8 +235,10 @@ since 2022 are mostly in fidelity and control, not a new paradigm.
 
 **Readings:**
 
+- Lu et al., [ViLBERT: Pretraining Task-Agnostic Visiolinguistic Representations for Vision-and-Language Tasks](https://arxiv.org/abs/1908.02265) (2019)
 - Radford et al., [CLIP: Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) (2021)
 - Rombach et al., [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752) (Stable Diffusion, 2022); Explained: [The Illustrated Stable Diffusion](https://jalammar.github.io/illustrated-stable-diffusion/)
+- Ramesh et al., [Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/abs/2204.06125) (DALL-E 2, 2022)
 
 **Key Concepts:**
 
@@ -225,35 +255,54 @@ answers this for knowledge — retrieve, then generate. MCP and tool use answer 
 capabilities — a model that can act, not just recite. Deeper question: what should live inside
 the model's weights vs. outside it in the surrounding system, and who controls that boundary?
 
-**Tuesday: RAG (Retrieval-Augmented Generation)**
+**Tuesday: RAG, Tool Use, and Harnesses**
 
-- Architecture: retriever + generator
-- Vector databases and document chunking
-- Limitations and alternatives to RAG
-- Memory networks
-
-**Thursday: MCP, Tool Use, Harnesses, and Agents**
-
-- MCP learning to use APIs (Toolformer)
-- Self-supervised training for tool use
-- Kani, langchain, hooks, skills and agent frameworks
-- Design choices: knowledge location, control flow
+- RAG architecture: retriever + generator; vector databases and document chunking;
+  limitations and alternatives (memory networks) — covered in lecture, no assigned reading
+- MCP learning to use APIs (Toolformer): self-supervised training for tool use, no
+  hand-labeled API-call examples needed
 - Harnesses, introduced: what surrounds the model (tool permissions, context management) —
-  the basic vocabulary that Week 11's orchestration/evaluation session builds on
+  the basic vocabulary Thursday and Week 11 both build on
+- Design choices: knowledge location (in the weights vs. the prompt vs. the harness), control
+  flow
+
+**Thursday: Agentic AI — Single Agents and Multi-Agent Systems**
+
+- What is an agent? The reason-act loop (ReAct): interleaving reasoning traces with tool
+  calls, the base pattern nearly every agent framework wraps something around
+- Single agent vs. multiple agents: when does splitting a task across agents help (parallel,
+  independent sub-tasks) vs. hurt (added coordination cost, token cost, new failure modes)?
+- A taxonomy of how multi-agent systems actually fail in practice (coordination breakdowns,
+  not just model capability limits) — the design-level question introduced here; Week 11
+  covers the orchestration mechanics and evaluation benchmarks in depth
 
 **Readings:**
 
-- Schick et al., [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) (2023); Explained: [How does AI learn to use tools? - Toolformer explained](https://www.youtube.com/watch?v=hI2BY7yl_Ac)
-- Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (RAG, 2020)
-- Anthropic, [Model Context Protocol specification](https://modelcontextprotocol.io) (2024) — the actual MCP spec this topic is named for
-- Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models" (ICLR 2023) — the origin of the reason+act loop every harness wraps around
-- Anthropic, ["Building Effective Agents"](https://www.anthropic.com/engineering/building-effective-agents) (Dec 2024) — the canonical workflows-vs-agents framework
+- (Tuesday) Schick et al., [Toolformer: Language Models Can Teach Themselves to Use Tools](https://arxiv.org/abs/2302.04761) (2023); Explained: [How does AI learn to use tools? - Toolformer explained](https://www.youtube.com/watch?v=hI2BY7yl_Ac)
+- (Tuesday) Zhang, Wang, Ge, Xu, Hamm, and Reddy, ["Stop Comparing LLM Agents Without Disclosing the Harness"](https://arxiv.org/abs/2605.23950) (2026) — the Binding Constraint Thesis: for long-horizon agent tasks, harness configuration (context construction, tool routing, orchestration, error recovery) explains more performance variance than model choice does
+- (Thursday) Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models" (ICLR 2023) — the origin of the reason+act loop every harness wraps around
+- (Thursday) Zhuge et al., [GPTSwarm: Language Agents as Optimizable Graphs](https://arxiv.org/abs/2402.16823) (ICML 2024) — represents multi-agent systems as computational graphs and optimizes both node prompts and the graph's own wiring
+
+RAG is covered in lecture (retrieve-then-generate architecture, vector DBs/chunking, alternatives) but has no assigned reading this year.
+
+**See also (optional, background):**
+
+- (Tuesday) Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" (RAG, 2020) — the lecture's own reference for the architecture, not an assigned reading
+- (Tuesday, harness) Kim et al., "The Interplay of Harness Design and Post-Training in LLM Agents" (2026) — treats the harness (tool exposure, tool descriptions) as a design dimension separate from training; a distinct paper from this week's required harness reading above
+- (Tuesday) Anthropic, [Model Context Protocol specification](https://modelcontextprotocol.io) (2024) — the actual MCP spec this topic is named for
+- (Tuesday) Anthropic, ["Building Effective Agents"](https://www.anthropic.com/engineering/building-effective-agents) (Dec 2024) — the canonical workflows-vs-agents framework
+- (Tuesday) Bai et al., [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) (2022) — training principles into the weights instead of the harness enforcing them; the "inside the model" counterpart to this week's harness material
+- (Thursday) Cemri et al., [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657) (2025) — a taxonomy of 14 real multi-agent failure modes across 3 categories, from 150 annotated production traces
+- (Thursday) Anthropic, ["Effective harnesses for long-running agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) (Nov 2025) — direct engineering treatment of harness design (context management, sandboxing, assumptions going stale as models improve); assigned in full at Week 11 once multiple agents are coordinating
+- (Thursday) Anthropic, ["How we built our multi-agent research system"](https://www.anthropic.com/engineering/multi-agent-research-system) (June 2025) — the orchestrator-worker architecture behind Claude's Research feature, with real cost numbers
+- (Thursday) Anthropic/Claude, ["When to use multi-agent systems (and when not to)"](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them) — short practitioner framing of the single-vs-multi-agent design question
 
 **Key Concepts:**
 
-- API integration with LLMs via MCP
-- Agentic AI systems; harnesses vs. models
-- Controlling what goes into the context
+- RAG architecture; API integration with LLMs via MCP
+- Harnesses vs. models: what goes inside the weights vs. outside in the surrounding system
+- Agentic AI systems: the reason-act loop
+- Single-agent vs. multi-agent design tradeoffs (parallelism and cost vs. coordination risk)
 
 ---
 
@@ -515,7 +564,7 @@ follow-up to Week 4's RAG/MCP/agents material)
 - Yao et al., [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) (2024)
 - Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (2023/ICLR 2024)
 - Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering" (NeurIPS 2024) — the interface/harness around an agent matters as much as the model itself, with real ablations proving it
-- Anthropic, ["Effective harnesses for long-running agents"](https://www.anthropic.com/engineering) (Nov 2025) — direct engineering follow-up on harness design (context management, sandboxing, assumptions going stale as models improve)
+- Anthropic, ["Effective harnesses for long-running agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) (Nov 2025) — direct engineering follow-up on harness design (context management, sandboxing, assumptions going stale as models improve); optional background at Week 4, assigned in full here
 
 **Key Concepts:**
 
