@@ -14,11 +14,22 @@ Projects will be teams of 3 students.
 | Week | Milestone | Deliverable |
 |------|-----------|-------------|
 | Week 4 | Team Formation | Submit team members and initial interests |
+| Week 6 | Scoping Meeting | 15-minute meeting with your team's TA before writing the proposal |
 | Week 7 | Proposal | 1-page project proposal |
 | Week 9 | Midpoint Check-in | meet with TA and/or professor |
 | Week 12 | Draft Report |  |
 | Week 14 | Presentations | TBD |
 | After Week 14 | Final Report | |
+
+## Project TAs
+
+Each team has a TA who will meet with you at the Week 6 scoping meeting and the Week 9 midpoint check-in. Your TA will reach out to schedule.
+
+| TA | Teams |
+|----|-------|
+| Sashank Desu | 3Heads1GPU, Art of the Art, GUI Force One, Representation AutoEncoder, Zeroed ReLUs |
+| Ruichi Zhang | Backpropagandists, CLIP that chat, Gradient Descenters, StipendNeeded, Team Anima |
+| Miranda Miao | Cross Talk, Cross-Attendees, Need More Compute, Vision Suspects |
 
 ## Team Formation
 
