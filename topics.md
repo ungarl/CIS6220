@@ -338,12 +338,21 @@ directly editing its internal activations?
 
 **Readings:**
 
-- Alain & Bengio, [Understanding Intermediate Layers Using Linear Classifier Probes](https://arxiv.org/abs/1610.01644) (2016) — the classic linear-probing paper
-- Anthropic, ["A Mathematical Framework for Transformer Circuits"](https://transformer-circuits.pub/2021/framework/index.html) (2021) — the linear representation hypothesis; paired with [Neel Nanda's walkthrough video](https://www.youtube.com/watch?v=KV5gbOmHbjU)
-- Anthropic, ["Towards Monosemanticity: Decomposing Language Models with Dictionary Learning"](https://transformer-circuits.pub/2023/monosemantic-features) (2023) — sparse autoencoders
-- Dai et al., [Why Can GPT Learn In-Context?](https://arxiv.org/abs/2212.10559) (2023) — the in-context-learning method
-- Turner et al., [Activation Addition: Steering Language Models Without Optimization](https://arxiv.org/abs/2308.10248) (2023) — the core activation-steering paper
-- Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021) — the fine-tuning method
+- Elhage et al., [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) (2021) — Tuesday; paired with [Neel Nanda's walkthrough video](https://www.youtube.com/watch?v=KV5gbOmHbjU)
+- Lindsey et al., [On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) (2025) — Tuesday; attribution graphs
+- Panickssery et al., [Steering Llama 2 via Contrastive Activation Addition](https://arxiv.org/abs/2312.06681) (2024) — Thursday
+- Wu et al., [AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders](https://arxiv.org/abs/2501.17148) (2025) — Thursday
+
+**See also (optional, background):**
+
+- Lindsey et al., "Circuit Tracing: Revealing Computational Graphs in Language Models" (2025) — the methods companion to "On the Biology"
+- Bricken et al., "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning" (2023) — sparse autoencoders
+- Templeton et al., "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet" (2024)
+- Alain & Bengio, "Understanding Intermediate Layers Using Linear Classifier Probes" (2016) — the classic linear-probing paper
+- Turner et al., "Activation Addition: Steering Language Models Without Optimization" (2023) — the original activation-steering paper
+- Zou et al., "Representation Engineering: A Top-Down Approach to AI Transparency" (2023)
+- Dai et al., "Why Can GPT Learn In-Context?" (2023) — in-context learning
+- Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models" (2021) — fine-tuning, covered in lecture
 
 **Key Concepts:**
 
