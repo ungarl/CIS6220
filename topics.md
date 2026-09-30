@@ -401,12 +401,17 @@ fraction of the compute of comparably capable dense models.
 **Readings:**
 
 - Hinton et al., [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) (2015); Explained: [Distilling the Knowledge in a Neural Network](https://www.youtube.com/watch?v=EK61htlw8hY)
-- Shoeybi et al., [Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism](https://arxiv.org/abs/1909.08053) (2019)
-- Rajbhandari et al., [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](https://arxiv.org/abs/1910.02054) (2019)
-- Fedus et al., [A Review of Sparse Expert Models in Deep Learning](https://arxiv.org/pdf/2209.01667.pdf) (2022); Explained: [Sparse Expert Models (Switch Transformers, GLaM, and more)](https://www.youtube.com/watch?v=U5mhpKkOzKs)
+- Sanh et al., [DistilBERT, a distilled version of BERT](https://arxiv.org/abs/1910.01108) (2019)
+- DeepSeek-AI, [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) (2024) — §3.2.3 (MoE routing) and §3.3 (FP8 quantization)
 - Frantar et al., [GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers](https://arxiv.org/abs/2210.17323) (2022/ICLR 2023)
-- Dettmers et al., [LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale](https://arxiv.org/abs/2208.07339) (2022)
+
+**See also (optional, background):**
+
+- Shoeybi et al., "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism" (2019) — training-time parallelism, covered in lecture
+- Rajbhandari et al., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models" (2019) — covered in lecture
+- Dettmers et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale" (2022) — alternate quantization angle
 - Dettmers et al., "QLoRA: Efficient Finetuning of Quantized LLMs" (2023)
+- Fedus et al., "A Review of Sparse Expert Models in Deep Learning" (2022) — last year's MoE background reading, now dated
 
 **Key Concepts:**
 
@@ -446,13 +451,22 @@ instead of human preferences, is what trains today's reasoning models.
 
 **Readings:**
 
+- Ross, Gordon, Bagnell, [A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686) (DAgger, 2011)
 - Schulman et al., [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347) (PPO, 2017) - Explained: [Preference Tuning LLMs with DPO](https://huggingface.co/blog/pref-tuning)
 - Rafailov et al., [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (DPO, 2023)
-- DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025)
-- Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023)
+- DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025), with Shao et al., [DeepSeekMath](https://arxiv.org/abs/2402.03300) (2024) for the GRPO mechanics
+
+**See also (optional, background):**
+
+- Schulman et al., "Trust Region Policy Optimization" (TRPO, 2015) — background for PPO's clipping
+- Christiano et al., "Deep Reinforcement Learning from Human Preferences" (RLHF, 2017)
+- Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023) — LLM-as-judge, moved out of required reading this year
+- Zheng et al., [Group Sequence Policy Optimization](https://arxiv.org/abs/2507.18071) (GSPO, 2025) — direct fix to GRPO's instability; trains Qwen3
+- "DAPO: An Open-Source LLM Reinforcement Learning System at Scale" (2025) — similar ground to GSPO, more ablation-heavy
 
 **Key Concepts:**
 
+- Imitation learning, distribution shift, "why RL"
 - Policy gradients, advantage functions
 - Trust regions, clipping, Alignment tax
 - DPO, PPO, GRPO
@@ -463,37 +477,51 @@ instead of human preferences, is what trains today's reasoning models.
 
 ### Week 9: Reinforcement Learning - Deep Q-Networks
 
-Game-playing AI is a clean testbed for a bigger question: can an agent learn good strategy
-purely from trial-and-error and self-play, with no human demonstrations at all? Cicero pushed
-this further, combining strategic planning with natural-language negotiation — the first system
-to reach human-level play in a game that's fundamentally about talking, not just moving pieces.
+Q-learning asks a basic RL question with a neural net standing in for the lookup table: can an
+agent learn a value for every action in every state purely from trial-and-error reward, and act
+greedily on it? Self-play pushes the same trial-and-error idea further — no human
+demonstrations, no labeled data, just an agent improving against itself. That mechanism isn't
+only for games: Week 8's reasoning models already train on verifiable rewards, and Absolute
+Zero closes the loop, using self-play to generate a model's own training curriculum with zero
+external data at all.
 
-**Tuesday: Q-learning; Decision Transformers**
+**Tuesday: Q-Learning with Neural Networks**
 
-- Soft Actor-Critic (SAC)
-- Maximum entropy RL
-- Conservative Q-learning
+- Deep Q-Networks (DQN): approximating the Q-function with a neural net, experience replay,
+  target networks
+- Double DQN: overestimation bias in Q-learning's max operator, and the two-network fix
+- Brief mention only: classic game-playing systems built on this lineage (AlphaGo, AlphaZero,
+  MuZero, Monte Carlo Tree Search) — optional background, see readings below
 
-**Thursday: Game Playing AI**
+**Thursday: Beyond Value-Based RL — Maximum Entropy and Self-Play**
 
-- Deep Q-Networks (DQN)
-- Double DQN
-- Experience replay
-- AlphaGo, AlphaZero, MuZero
-- Monte Carlo Tree Search (MCTS)
-- Cicero: Diplomacy with language and strategy
+- Soft Actor-Critic (SAC): maximum-entropy RL, continuous control, off-policy actor-critic
+- Self-play as a general RL mechanism, not just a game-playing trick
+- Absolute Zero: self-play RL for LLM reasoning with zero external data — closes the loop back
+  to Week 8's RLVR content
+- Brief mention only: Cicero (Diplomacy: self-play plus natural-language negotiation) —
+  optional background, see readings below
 
 **Readings:**
 
-- Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
+- Mnih et al., [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602) (2013); journal version: ["Human-level control through deep reinforcement learning"](https://doi.org/10.1038/nature14236) (DQN, Nature 2015)
 - Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
+- Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
+- Zhao et al., [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) (2025)
+
+**See also (optional, background):**
+
+- Hessel et al., "Rainbow: Combining Improvements in Deep Reinforcement Learning" (2017)
+- Silver et al., "Mastering the Game of Go without Human Knowledge" (AlphaZero, 2017)
+- Schrittwieser et al., "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model" (MuZero, 2019)
 - FAIR/Meta AI, ["Human-level play in the game of Diplomacy by combining language models with strategic reasoning"](https://www.science.org/doi/10.1126/science.ade9097) (Cicero, Science 2022)
 
 **Key Concepts:**
 
 - Q-learning with neural networks
-- Self-play training
-- Combining language models with strategic reasoning
+- Maximum-entropy RL; continuous control
+- Self-play as a general RL mechanism — for games, and (Absolute Zero) for LLM reasoning with
+  no external data
 
 ---
 
