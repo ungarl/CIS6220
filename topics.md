@@ -320,21 +320,29 @@ you know what's happening inside when you try? Deeper question: how should AI be
 changing its weights (fine-tuning), by changing its input (prompting/in-context learning), or by
 directly editing its internal activations?
 
-**Tuesday, first half: Probing**
+**Tuesday: Five Ways to Steer, and Looking Inside**
 
-- Linear probes
-- The linear representation hypothesis: why concepts tend to be encoded as directions in
-  activation space — the theoretical basis both probing and steering rely on
-- Sparse autoencoders, and the Anthropic case: from "Towards Monosemanticity" to "Scaling
-  Monosemanticity" — sparse probes finding interpretable features (golden gate bridge)
+- The steering landscape: what you change — all the weights (SFT, RLHF/DPO), a low-rank slice
+  of them (LoRA, prefix tuning), the input (prompting, in-context learning), the surrounding
+  harness, or the activations themselves
+- LoRA vs. full fine-tuning: why a low-rank update learns less but forgets less; in-context
+  learning as implicit fine-tuning
+- Probing: linear probes and what they can and can't show; the linear representation hypothesis
+- Superposition and sparse autoencoders: why neurons are polysemantic, and how dictionary
+  learning recovers interpretable features
+- Transformer circuits: the residual stream as an additive channel, QK/OV circuits, induction
+  heads
+- Attribution graphs in a production model: multi-step reasoning, planning, and why models
+  hallucinate
 
-**Tuesday, second half + Thursday: Steering — In-Context Learning, Activation Steering, and LoRA Fine-Tuning**
+**Thursday: Steering with Activations**
 
-- In-context learning / prompting: adapt behavior via the input, no weight or activation changes
-- Activation steering: adapt behavior by directly editing internal activations (activation
-  addition — prompt-pair activation differences)
-- LoRA fine-tuning: adapt behavior by updating (a low-rank slice of) the weights
-- Comparing the three: how AxBench benchmarks steering vs. fine-tuning vs. in-context learning
+- Contrastive Activation Addition: steering vectors from contrastive pairs, which layers work,
+  and flipping a behavior with a sign change
+- Feature steering with SAEs (Golden Gate Claude) vs. activation addition
+- AxBench: detecting a concept vs. steering it, and why prompting still wins at steering
+- Emergent misalignment: found by probing, controlled by steering
+- When to steer instead of prompt or fine-tune
 
 **Readings:**
 
@@ -356,8 +364,10 @@ directly editing its internal activations?
 
 **Key Concepts:**
 
-- Probes; linear representation hypothesis; sparse autoencoders
-- Three ways to adapt model behavior: in-context learning/prompting, activation steering, fine-tuning
+- Ways to adapt model behavior: fine-tuning (SFT, LoRA), prompting/in-context learning, harness, activation steering
+- Probes; linear representation hypothesis; superposition; sparse autoencoders
+- Residual stream; QK/OV circuits; induction heads; attribution graphs
+- Steering vectors (difference of means); reading vs. writing a concept
 
 ---
 
