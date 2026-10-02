@@ -420,12 +420,13 @@ fraction of the compute of comparably capable dense models.
 **Readings:**
 
 - Hinton et al., [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) (2015); Explained: [Distilling the Knowledge in a Neural Network](https://www.youtube.com/watch?v=EK61htlw8hY)
-- Sanh et al., [DistilBERT, a distilled version of BERT](https://arxiv.org/abs/1910.01108) (2019)
-- DeepSeek-AI, [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) (2024) — §3.2.3 (MoE routing) and §3.3 (FP8 quantization)
+- Hsieh et al., [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) (2023)
+- DeepSeek-AI, [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437) (2024) — §2.1.2 (DeepSeekMoE and load balancing), §3.2.3 (memory-saving training), and §3.3 (FP8 training)
 - Frantar et al., [GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers](https://arxiv.org/abs/2210.17323) (2022/ICLR 2023)
 
 **See also (optional, background):**
 
+- Sanh et al., [DistilBERT, a distilled version of BERT](https://arxiv.org/abs/1910.01108) (2019) — task-agnostic distillation of BERT, covered in lecture
 - Shoeybi et al., "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism" (2019) — training-time parallelism, covered in lecture
 - Rajbhandari et al., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models" (2019) — covered in lecture
 - Dettmers et al., "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale" (2022) — alternate quantization angle
