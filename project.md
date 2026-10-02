@@ -11,15 +11,17 @@ Projects will be teams of 3 students.
 
 ## Timeline
 
-| Week | Milestone | Deliverable |
-|------|-----------|-------------|
-| Week 4 | Team Formation | Submit team members and initial interests |
-| Week 6 | Scoping Meeting | 15-minute meeting with your team's TA before writing the proposal |
-| Week 7 | Proposal | 1-page project proposal |
-| Week 9 | Midpoint Check-in | meet with TA and/or professor |
-| Week 12 | Draft Report |  |
-| Week 14 | Presentations | TBD |
-| After Week 14 | Final Report | |
+All project hand-ins are due **Monday at midnight**, and no homework is due on those Mondays.
+
+| Week | Milestone | Deliverable | Due |
+|------|-----------|-------------|-----|
+| Week 4 | Team Formation | Submit team members and initial interests | Mon Sep 21 |
+| Week 6 | Scoping Meeting | 15-minute meeting with your team's TA before writing the proposal | during Week 6 |
+| Week 7 | Proposal | 1-page project proposal | Mon Oct 12 |
+| Week 9 | Midpoint Check-in | meet with TA and/or professor | during Week 9 |
+| Week 12 | Draft Report |  | Mon Nov 16 |
+| Week 14 | Presentations | TBD | in class, Dec 1 and 3 |
+| After Week 14 | Final Report | | Mon Dec 7 |
 
 ## Project TAs
 
