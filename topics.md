@@ -347,7 +347,9 @@ directly editing its internal activations?
 **Readings:**
 
 - Elhage et al., [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) (2021) — Tuesday; paired with [Neel Nanda's walkthrough video](https://www.youtube.com/watch?v=KV5gbOmHbjU)
+  - Long paper; read only: Summary of Results; Transformer Overview; in One-Layer, the QK/OV split and Skip-Trigrams; in Two-Layer, Three Kinds of Composition and Induction Heads
 - Lindsey et al., [On the Biology of a Large Language Model](https://transformer-circuits.pub/2025/attribution-graphs/biology.html) (2025) — Tuesday; attribution graphs
+  - Long paper; read only: Introduction; Method Overview; Multi-step Reasoning; Entity Recognition and Hallucinations; plus one of Planning in Poems, Multilingual Circuits, or Addition
 - Panickssery et al., [Steering Llama 2 via Contrastive Activation Addition](https://arxiv.org/abs/2312.06681) (2024) — Thursday
 - Wu et al., [AxBench: Steering LLMs? Even Simple Baselines Outperform Sparse Autoencoders](https://arxiv.org/abs/2501.17148) (2025) — Thursday
 
