@@ -539,19 +539,19 @@ model's own training curriculum with zero external data at all.
 **Readings:**
 
 - (Tuesday) Mnih et al., [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602) (2013); journal version: ["Human-level control through deep reinforcement learning"](https://doi.org/10.1038/nature14236) (DQN, Nature 2015)
-- (Tuesday) Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
 - (Tuesday) Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
 - (Thursday) Zhao et al., [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) (2025)
+- (Thursday) Wei et al., [SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](https://arxiv.org/abs/2502.18449) (2025) — RL for software-engineering agents
 
 **See also (optional, background):**
 
+- Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) — the overestimation fix taught Tuesday - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
 - Hessel et al., "Rainbow: Combining Improvements in Deep Reinforcement Learning" (2017)
 - Levine et al., [Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems](https://arxiv.org/abs/2005.01643) (2020)
 - Silver et al., "Mastering the Game of Go without Human Knowledge" (AlphaZero, 2017)
 - Schrittwieser et al., "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model" (MuZero, 2019)
 - FAIR/Meta AI, ["Human-level play in the game of Diplomacy by combining language models with strategic reasoning"](https://www.science.org/doi/10.1126/science.ade9097) (Cicero, Science 2022)
 - Snell et al., [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314) (2024) — test-time compute
-- Wei et al., [SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](https://arxiv.org/abs/2502.18449) (2025) — RL for software-engineering agents
 - Baker et al., [Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation](https://arxiv.org/abs/2503.11926) (2025) — a reasoning model hacking its coding rewards, and what happens when you penalize it for saying so
 - Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023) — LLM-as-judge
 
