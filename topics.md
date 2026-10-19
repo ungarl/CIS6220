@@ -130,7 +130,7 @@ well? Deeper question: attention's basic mechanics don't change with scale — w
   near-MHA quality) → sparse indexers (shrink *how many* tokens are attended to, not what's
   stored per token; composes with MLA)
 
-**Ongoing Theme: Evaluation** (introduced here; revisited for reasoning models in Week 8 and
+**Ongoing Theme: Evaluation** (introduced here; revisited for reasoning models in Week 9 and
 for agents in Week 11)
 
 - Does a longer context window actually get used well, or does it just exist? "Lost in the
@@ -451,8 +451,9 @@ not labeled in advance? RLHF and its descendants (DPO, GRPO) turn human or autom
 judgments into a training signal — and the same machinery, pointed at *verifiable* rewards
 instead of human preferences, is what trains today's reasoning models.
 
-**Tuesday: RLHF and Policy Gradients**
+**Tuesday: Imitation Learning and PPO**
 
+- Imitation learning: behavior cloning, distribution shift, DAgger
 - Reinforcement learning fundamentals (V, Q, policy)
   - On-policy vs off-policy learning
   - Model-based vs model-free RL
@@ -462,29 +463,35 @@ instead of human preferences, is what trains today's reasoning models.
 - Generalized Advantage Estimation (GAE)
 - REINFORCE for LLMs
 
-**Thursday: Direct Preference Optimization; Reasoning Models & Evaluation**
+**Thursday: Preference Optimization and RL for Reasoning**
 
 - DPO (Direct Preference Optimization); GRPO — the algorithm behind DeepSeek-R1
 - RLVR (RL with Verifiable Rewards): how reasoning models (o1/o3, DeepSeek-R1) are trained
-- Test-time compute in practice: "thinking tokens," inference-time scaling (cashing out the
-  preview from Week 1)
-- Evaluation revisited: LLM-as-judge, benchmark contamination and saturation — how do we know a
-  reasoning model is actually better?
+- Where else the reward can come from: AI feedback (Constitutional AI / RLAIF)
+- Reward hacking: over-optimizing a learned reward model
+- Outcome vs. process rewards (process reward models)
 
 **Readings:**
 
 - Ross, Gordon, Bagnell, [A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686) (DAgger, 2011)
-- Schulman et al., [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347) (PPO, 2017) - Explained: [Preference Tuning LLMs with DPO](https://huggingface.co/blog/pref-tuning)
-- Rafailov et al., [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (DPO, 2023)
-- DeepSeek-AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning" (2025), with Shao et al., [DeepSeekMath](https://arxiv.org/abs/2402.03300) (2024) for the GRPO mechanics
+- Schulman et al., [Proximal Policy Optimization Algorithms](https://arxiv.org/abs/1707.06347) (PPO, 2017)
+- Rafailov et al., [Direct Preference Optimization](https://arxiv.org/abs/2305.18290) (DPO, 2023) - Explained: [Preference Tuning LLMs with DPO](https://huggingface.co/blog/pref-tuning)
+- Shao et al., [DeepSeekMath](https://arxiv.org/abs/2402.03300) (2024) — Sections 4.1 and 5.2 only (GRPO mechanics)
+- DeepSeek-AI, [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948v1) (2025) — version 1, Sections 2 and 4 only
 
 **See also (optional, background):**
 
 - Schulman et al., "Trust Region Policy Optimization" (TRPO, 2015) — background for PPO's clipping
 - Christiano et al., "Deep Reinforcement Learning from Human Preferences" (RLHF, 2017)
-- Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023) — LLM-as-judge, moved out of required reading this year
+- Ouyang et al., [Training Language Models to Follow Instructions with Human Feedback](https://arxiv.org/abs/2203.02155) (InstructGPT, 2022) — the standard SFT → reward model → PPO pipeline that DPO replaces
+- Hugging Face, [Illustrating Reinforcement Learning from Human Feedback (RLHF)](https://huggingface.co/blog/rlhf) — accessible walkthrough of the RLHF pipeline
+- OpenAI Spinning Up, [Proximal Policy Optimization](https://spinningup.openai.com/en/latest/algorithms/ppo.html) — gentler companion to the PPO paper
+- Bai et al., [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073) (2022) — replacing human preference labels with AI feedback (RLAIF)
+- Gao, Schulman, Hilton, [Scaling Laws for Reward Model Overoptimization](https://arxiv.org/abs/2210.10760) (2022) — optimize a learned reward model too hard and true quality falls
+- Lightman et al., [Let's Verify Step by Step](https://arxiv.org/abs/2305.20050) (2023) — process reward models: scoring each reasoning step, not just the final answer
 - Zheng et al., [Group Sequence Policy Optimization](https://arxiv.org/abs/2507.18071) (GSPO, 2025) — direct fix to GRPO's instability; trains Qwen3
 - "DAPO: An Open-Source LLM Reinforcement Learning System at Scale" (2025) — similar ground to GSPO, more ablation-heavy
+- Liu et al., [Understanding R1-Zero-Like Training: A Critical Perspective](https://arxiv.org/abs/2503.20783) (Dr. GRPO, 2025) — biases in GRPO's length/std normalization; questions how much of the "aha moment" is due to RL
 
 **Key Concepts:**
 
@@ -492,58 +499,71 @@ instead of human preferences, is what trains today's reasoning models.
 - Policy gradients, advantage functions
 - Trust regions, clipping, Alignment tax
 - DPO, PPO, GRPO
-- RLVR; test-time/inference-time compute scaling
-- LLM-as-judge; benchmark contamination and saturation
+- RLVR; RLAIF; reward-model overoptimization
+- Outcome vs. process rewards
 
 ---
 
-### Week 9: Reinforcement Learning - Deep Q-Networks
+### Week 9: Reinforcement Learning - Off-Policy RL and Self-Play
 
 Q-learning asks a basic RL question with a neural net standing in for the lookup table: can an
 agent learn a value for every action in every state purely from trial-and-error reward, and act
-greedily on it? Self-play pushes the same trial-and-error idea further — no human
-demonstrations, no labeled data, just an agent improving against itself. That mechanism isn't
-only for games: Week 8's reasoning models already train on verifiable rewards, and Absolute
-Zero closes the loop, using self-play to generate a model's own training curriculum with zero
-external data at all.
+greedily on it? Because it learns off-policy, it can reuse old experience, which PPO cannot.
+Soft Actor-Critic carries the same idea to continuous actions such as robot control. Self-play
+pushes trial-and-error further — no human demonstrations, no labeled data, just an agent
+improving against itself. That mechanism isn't only for games: Week 8's reasoning models already
+train on verifiable rewards, and Absolute Zero closes the loop, using self-play to generate a
+model's own training curriculum with zero external data at all.
 
-**Tuesday: Q-Learning with Neural Networks**
+**Tuesday: Off-Policy Value Learning — from DQN to Soft Actor-Critic**
 
 - Deep Q-Networks (DQN): approximating the Q-function with a neural net, experience replay,
   target networks
 - Double DQN: overestimation bias in Q-learning's max operator, and the two-network fix
-- Brief mention only: classic game-playing systems built on this lineage (AlphaGo, AlphaZero,
-  MuZero, Monte Carlo Tree Search) — optional background, see readings below
-
-**Thursday: Beyond Value-Based RL — Maximum Entropy and Self-Play**
-
 - Soft Actor-Critic (SAC): maximum-entropy RL, continuous control, off-policy actor-critic
+- Value-based vs. policy-based RL, and why LLM training uses policy gradients
+- Brief mention only: offline RL; classic game-playing systems (AlphaGo, AlphaZero, MuZero)
+
+**Thursday: Self-Play, Test-Time Compute, and RL for Agents**
+
 - Self-play as a general RL mechanism, not just a game-playing trick
 - Absolute Zero: self-play RL for LLM reasoning with zero external data — closes the loop back
   to Week 8's RLVR content
-- Brief mention only: Cicero (Diplomacy: self-play plus natural-language negotiation) —
-  optional background, see readings below
+- Test-time compute in practice: "thinking tokens," majority voting, inference-time scaling
+  (cashing out the preview from Week 1)
+- RL for agents: multi-turn, tool-using tasks with rewards at the end of a long episode, and how
+  agents hack those rewards
+- Evaluation revisited: LLM-as-judge, benchmark contamination and saturation — how do we know a
+  reasoning model is actually better?
 
 **Readings:**
 
-- Mnih et al., [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602) (2013); journal version: ["Human-level control through deep reinforcement learning"](https://doi.org/10.1038/nature14236) (DQN, Nature 2015)
-- Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
-- Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
-- Zhao et al., [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) (2025)
+- (Tuesday) Mnih et al., [Playing Atari with Deep Reinforcement Learning](https://arxiv.org/abs/1312.5602) (2013); journal version: ["Human-level control through deep reinforcement learning"](https://doi.org/10.1038/nature14236) (DQN, Nature 2015)
+- (Tuesday) Van Hasselt et al., [Double DQN](https://arxiv.org/abs/1509.06461) (2016) - Explained: [HuggingFace Deep RL Course](https://huggingface.co/learn/deep-rl-course)
+- (Tuesday) Haarnoja et al., [Soft Actor-Critic](https://arxiv.org/abs/1801.01290) (SAC, 2018) - Explained: [Soft Actor-Critic - Spinning Up](https://spinningup.openai.com/en/latest/algorithms/sac.html)
+- (Thursday) Zhao et al., [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://arxiv.org/abs/2505.03335) (2025)
 
 **See also (optional, background):**
 
 - Hessel et al., "Rainbow: Combining Improvements in Deep Reinforcement Learning" (2017)
+- Levine et al., [Offline Reinforcement Learning: Tutorial, Review, and Perspectives on Open Problems](https://arxiv.org/abs/2005.01643) (2020)
 - Silver et al., "Mastering the Game of Go without Human Knowledge" (AlphaZero, 2017)
 - Schrittwieser et al., "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model" (MuZero, 2019)
 - FAIR/Meta AI, ["Human-level play in the game of Diplomacy by combining language models with strategic reasoning"](https://www.science.org/doi/10.1126/science.ade9097) (Cicero, Science 2022)
+- Snell et al., [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://arxiv.org/abs/2408.03314) (2024) — test-time compute
+- Wei et al., [SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](https://arxiv.org/abs/2502.18449) (2025) — RL for software-engineering agents
+- Baker et al., [Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation](https://arxiv.org/abs/2503.11926) (2025) — a reasoning model hacking its coding rewards, and what happens when you penalize it for saying so
+- Zheng et al., [Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685) (2023) — LLM-as-judge
 
 **Key Concepts:**
 
-- Q-learning with neural networks
+- Q-learning with neural networks; off-policy learning and replay
 - Maximum-entropy RL; continuous control
 - Self-play as a general RL mechanism — for games, and (Absolute Zero) for LLM reasoning with
   no external data
+- Test-time/inference-time compute scaling
+- RL for agents; reward hacking
+- LLM-as-judge; benchmark contamination and saturation
 
 ---
 

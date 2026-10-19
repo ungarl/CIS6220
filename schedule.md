@@ -21,7 +21,7 @@ For the final project deliverables in detail, see [Final Project](project.html).
 | 6 | Mechanistic interpretability and Steering | Tue Oct 6, Thu Oct 8 | |
 | 7 | Distillation; Efficient Architectures: MoE and Quantization | Tue Oct 13, Thu Oct 15 | **Project: Proposal** (no homework this week); due Mon Oct 19 |
 | 8 | Reinforcement Learning: Policy Optimization | Tue Oct 20, Thu Oct 22 | |
-| 9 | Reinforcement Learning: Deep Q-Networks | Tue Oct 27, Thu Oct 29 | **Project: Midpoint check-in** |
+| 9 | Reinforcement Learning: Off-Policy RL and Self-Play | Tue Oct 27, Thu Oct 29 | **Project: Midpoint check-in** (no homework this week) |
 | 10 | Speech and Audio Processing | Tue Nov 3, Thu Nov 5 | |
 | 11 | LLMs for Research; Agentic AI — Orchestration & Evaluation | Tue Nov 10, Thu Nov 12 | |
 | 12 | Video Understanding and Generation; Course Wrap-up | Tue Nov 17, Thu Nov 19 | **Project: Draft Report** (no homework this week); due Mon Nov 23; Thurs: **Midterm 2**  |
