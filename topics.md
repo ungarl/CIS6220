@@ -383,8 +383,8 @@ current illustration of the distillation idea taught here, and a callback to Wee
 models.
 
 Distillation makes a big model tractable *after* training, for deployment. The other half of
-"making big models tractable" happens *before* training even starts: how do you train a model
-too large to fit on one device in the first place? Two complementary strategies: shard the
+"making big models tractable" happens *before* training even starts, and comes up Thursday
+alongside MoE: how do you train a model too large to fit on one device in the first place? Two complementary strategies: shard the
 model itself across devices (tensor/model parallelism), or shard the optimizer state/gradients
 instead of replicating them everywhere (ZeRO/FSDP-style memory sharding). This is the technical
 foundation behind several of the "Training Efficiency" and "Memory Optimization" final project
@@ -396,16 +396,13 @@ weights with fewer bits without breaking it (quantization)? Cool application: De
 combination of MoE and low-precision training is a big part of why it could be trained for a
 fraction of the compute of comparably capable dense models.
 
-**Tuesday: Knowledge Distillation; Training Efficiency at Scale**
+**Tuesday: Knowledge Distillation**
 
 - Distillation: teacher-student models
 - Soft softmax with temperature
 - Distilling Step-by-Step
 - Reduced precision models (Deepseek example)
 - DeepSeek-R1-Distill: distilling reasoning traces (not just outputs) into small dense models
-- Training efficiency: tensor/model parallelism (Megatron-LM) vs. memory-efficient sharding of
-  optimizer state and gradients (ZeRO/FSDP) — training-time tractability, distillation's
-  deployment-time counterpart
 
 **Thursday: Mixture of Experts and Quantization**
 
@@ -415,6 +412,8 @@ fraction of the compute of comparably capable dense models.
 - GLaM, Switch Transformers
 - DeepSeek-V3: MoE + multi-head latent attention + auxiliary-loss-free load balancing, at 671B
   total / 37B activated parameters
+- Training efficiency: tensor/model parallelism (Megatron-LM) vs. memory-efficient sharding of
+  optimizer state and gradients (ZeRO/FSDP), then expert placement across nodes
 - Post-training quantization (PTQ) vs. quantization-aware training (QAT)
 - GPTQ, LLM.int8() — 8-bit/4-bit weight and activation quantization
 - QLoRA: quantization + LoRA for efficient fine-tuning
@@ -529,8 +528,10 @@ model's own training curriculum with zero external data at all.
 - Self-play as a general RL mechanism, not just a game-playing trick
 - Absolute Zero: self-play RL for LLM reasoning with zero external data — closes the loop back
   to Week 8's RLVR content
+- SWE-RL: RL on real GitHub bug fixes, with a reward that compares the model's patch to the
+  developer's merged fix
 - Test-time compute in practice: "thinking tokens," majority voting, inference-time scaling
-  (cashing out the preview from Week 1)
+  (building on Weeks 4 and 8)
 - RL for agents: multi-turn, tool-using tasks with rewards at the end of a long episode, and how
   agents hack those rewards
 - Evaluation revisited: LLM-as-judge, benchmark contamination and saturation — how do we know a
@@ -576,24 +577,36 @@ Aside: by 2026 several open models (Qwen3-ASR, NVIDIA Canary) have overtaken Whi
 accuracy leaderboards, but the architectural lesson taught here — weak supervision at scale — is
 the point, not who currently tops a leaderboard.
 
-**Tuesday: Speech Models**
+**Tuesday: Speech Recognition — From Audio to Text**
 
 - Speech recognition fundamentals: Mel-spectrograms and MFCCs
-- Whisper architecture
 - Conformers: combining convolutions and attention
-- Brief mention only: WaveNet/dilated convolutions (legacy architecture) and full-duplex
-  speech-to-speech systems (frontier aside, not a core topic)
+- Self-supervised speech representations: wav2vec 2.0
+- Weak supervision at scale: Whisper architecture and training data
+- Counterpoint: Canary matches Whisper with far less data
 
-**Thursday:** No new topic assigned (open/flex slot — see Schedule for how it's used).
+**Thursday: Speech Generation and Spoken Dialogue**
+
+- From WaveNet (dilated convolutions) to neural audio codecs and discrete speech tokens
+- Language modeling over audio tokens: zero-shot text-to-speech (VALL-E)
+- Full-duplex speech-to-speech dialogue (Moshi)
+- Speech-native LLMs vs. ASR → LLM → TTS pipelines
 
 **Readings:**
 
+- Baevski et al., "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech
+  Representations" (2020)
 - Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper, 2022)
-- Gulati et al., "Conformer: Convolution-augmented Transformer for Speech Recognition" (2020)
+- Wang et al., "Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers"
+  (VALL-E, 2023)
+- Défossez et al., "Moshi: a speech-text foundation model for real-time dialogue" (2024) —
+  selected sections: Mimi codec, multi-stream modeling, inner monologue
 
 **Key Concepts:**
 
 - Conformer architecture
+- Self-supervised vs. weakly supervised speech pretraining
+- Neural audio codecs and speech tokens; full-duplex dialogue
 
 ---
 
