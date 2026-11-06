@@ -632,22 +632,24 @@ follow-up to Week 4's RAG/MCP/agents material)
 
 - Multi-agent orchestration: subagent/worker delegation and coordination, vs. single-agent
   ReAct-style loops
+- Why multi-agent systems fail: a taxonomy of system-design, inter-agent, and verification
+  failures
+- Designing a team of agents: roles, communication, and editing shared state without conflicts
 - Harness design: context management across long sessions, sandboxing and tool permissions,
   human-in-the-loop approval flows
-- Coding agents as a case study (e.g. Claude Code, Cursor, Devin-style architectures) —
-  code as a shared, inspectable state for multi-agent coordination
-- Current agent evaluation: GAIA, SWE-bench (Verified), τ-bench, OSWorld, WebArena, METR
-  time-horizon benchmarks
+- Agent evaluation: SWE-bench (real GitHub issues graded by tests), what makes an agentic
+  benchmark valid, METR time-horizon measurements
 
 **Readings:**
 
-- Yamada et al., [Towards End-to-End Automation of AI Research](https://arxiv.org/abs/2606.15497) (Nature, 2026) — The AI Scientist
-- Thakkar et al., [Can LLM Feedback Enhance Review Quality? A Randomized Study of 20K Reviews at ICLR 2025](https://arxiv.org/abs/2504.09737) (2025)
-- Mialon et al., [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) (2023)
-- Yao et al., [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) (2024)
-- Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (2023/ICLR 2024)
-- Yang et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering" (NeurIPS 2024) — the interface/harness around an agent matters as much as the model itself, with real ablations proving it
-- Anthropic, ["Effective harnesses for long-running agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) (Nov 2025) — direct engineering follow-up on harness design (context management, sandboxing, assumptions going stale as models improve); optional background at Week 4, assigned in full here
+- (Tuesday) Yamada et al., [Towards End-to-End Automation of AI Research](https://arxiv.org/abs/2606.15497) (Nature, 2026) — The AI Scientist
+- (Tuesday) Thakkar et al., [Can LLM Feedback Enhance Review Quality? A Randomized Study of 20K Reviews at ICLR 2025](https://arxiv.org/abs/2504.09737) (2025)
+- (Thursday) Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (ICLR 2024)
+- (Thursday) Cemri et al., [Why Do Multi-Agent LLM Systems Fail?](https://arxiv.org/abs/2503.13657) (NeurIPS 2025)
+
+**See also (optional):**
+
+- (Thursday) Zhu et al., [Establishing Best Practices for Building Rigorous Agentic Benchmarks](https://arxiv.org/abs/2507.02825) (NeurIPS 2025)
 
 **Key Concepts:**
 

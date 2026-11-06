@@ -207,6 +207,8 @@ A structured approach to reading papers:
 - Mialon et al., "GAIA: a benchmark for General AI Assistants" (2023)
 - Jimenez et al., "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?" (2023/ICLR 2024)
 - Yao et al., "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains" (2024)
+- Cemri et al., "Why Do Multi-Agent LLM Systems Fail?" (NeurIPS 2025)
+- Zhu et al., "Establishing Best Practices for Building Rigorous Agentic Benchmarks" (NeurIPS 2025)
 
 ### Interpretability, Probing, and Steering
 - Alain & Bengio, "Understanding Intermediate Layers Using Linear Classifier Probes" (2016)
