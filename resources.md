@@ -219,6 +219,8 @@ A structured approach to reading papers:
 - Supplemental: "Painless Activation Steering: An Automated, Lightweight Approach for Post-Training Large Language Models" (2025)
 
 ### Scientific Paper Writing
+- Yamada et al., "Towards End-to-End Automation of AI Research" (Nature, 2026)
+- Thakkar et al., "Can LLM Feedback Enhance Review Quality? A Randomized Study of 20K Reviews at ICLR 2025" (2025)
 - Lu et al., "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery" (2024)
 - Weng et al., "CycleResearcher: Improving Automated Research via Automated Review" (2024)
 - Kusumegi et al., "Scientific production in the era of large language models" (Science, 2025)

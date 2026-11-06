@@ -641,8 +641,8 @@ follow-up to Week 4's RAG/MCP/agents material)
 
 **Readings:**
 
-- Lu et al., "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery" (2024)
-- Kusumegi et al., "Scientific production in the era of large language models" (Science, 2025)
+- Yamada et al., [Towards End-to-End Automation of AI Research](https://arxiv.org/abs/2606.15497) (Nature, 2026) — The AI Scientist
+- Thakkar et al., [Can LLM Feedback Enhance Review Quality? A Randomized Study of 20K Reviews at ICLR 2025](https://arxiv.org/abs/2504.09737) (2025)
 - Mialon et al., [GAIA: a benchmark for General AI Assistants](https://arxiv.org/abs/2311.12983) (2023)
 - Yao et al., [τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains](https://arxiv.org/abs/2406.12045) (2024)
 - Jimenez et al., [SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://arxiv.org/abs/2310.06770) (2023/ICLR 2024)
