@@ -667,27 +667,42 @@ generating pixels, not simulating physics? Aside: Sora itself has already been s
 audio/dialogue sync as visual fidelity — the frontier has moved from "can it generate video" to
 "can it generate a consistent audiovisual scene." Closing the course here: this is the last new
 technical content before presentations, followed by a recap of the course's major themes.
+Second question: once a model can generate realistic video, does it also *understand* what it
+sees — can it segment, reason about physics, or solve a maze with no task-specific training?
 
-**Tuesday: Video Understanding and Generation** (merged into one session — the diffusion
-fundamentals were already covered in Week 3, so this is an application/extension, not a new
-foundation)
+**Tuesday: Video Generation and Understanding** (one session — the diffusion fundamentals were
+already covered in Week 3, so this is an application/extension, not a new foundation)
 
-- Large Vision Models (LVM); video tokenization with VQGAN
-- Stable Video Diffusion; latent diffusion for video
-- Diffusion Transformers (DiT), spacetime patches (Sora); character consistency
-- Data curation for video (cuts, fades, optical flow); frame interpolation
+- Latent video diffusion: a pretrained image model plus added temporal layers (Stable Video
+  Diffusion); its three training stages (image pretraining → video pretraining → high-quality
+  fine-tuning)
+- Data curation for video: cut detection, optical-flow filtering, captioning
+- Modern recipe: Diffusion Transformers (DiT) over spacetime patches from a 3D (spatio-temporal)
+  VAE, as in Wan and Sora; character consistency
+- Video models as general-purpose vision models: zero-shot perception, physical reasoning, and
+  visual reasoning (e.g., mazes) from a generative video model
 
-**Course Wrap-up**: recap of major course themes (architecture/data/loss choices, evaluation,
-scale) — see Key Takeaways below.
+**Course Wrap-up** (end of Tuesday): recap of major course themes (architecture/data/loss
+choices, evaluation, scale) — see Key Takeaways below.
+
+**Thursday: Midterm 2** (covers Weeks 6–11; video is not on the exam)
 
 **Readings:**
 
-- Blattmann et al., "Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets" (2023)
-- OpenAI, [Sora: Video Generation Models as World Simulators](https://openai.com/research/video-generation-models-as-world-simulators) (2024) — historical: still the clearest explanation of DiT/spacetime patches, even though the product has moved on
+- Blattmann et al., [Stable Video Diffusion: Scaling Latent Video Diffusion Models to Large Datasets](https://arxiv.org/abs/2311.15127) (2023)
+- Wiedemer et al., [Video Models Are Zero-Shot Learners and Reasoners](https://arxiv.org/abs/2509.20328) (2025) — argues a generative video model (Veo 3) behaves like a general-purpose vision model
+
+**See also (optional):**
+
+- Wan Team, [Wan: Open and Advanced Large-Scale Video Generative Models](https://arxiv.org/abs/2503.20314) (2025) — the sections on the spatio-temporal VAE and the diffusion-transformer architecture; an open-weights model that much current research builds on
+- Ho et al., [Video Diffusion Models](https://arxiv.org/abs/2204.03458) (2022) — the original extension of image diffusion to video
+- OpenAI, [Sora: Video Generation Models as World Simulators](https://openai.com/research/video-generation-models-as-world-simulators) (2024) — historical: still a clear explanation of DiT/spacetime patches, even though the product has moved on
 
 **Key Concepts:**
 
-- Diffusion transformers for video; multi-stage training pipelines
+- Latent video diffusion; temporal layers; multi-stage training pipelines
+- Diffusion transformers over spacetime patches
+- Generative video models as zero-shot vision models
 
 ---
 
